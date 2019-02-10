@@ -12,12 +12,13 @@ import { AtAGlanceComponent } from './ventures/investing/at-a-glance/at-a-glance
 import { PortfolioComponent } from './ventures/investing/portfolio/portfolio.component';
 import { CupidComponent } from './ventures/studio/cupid/cupid.component';
 import { VenturesComponent } from './ventures/ventures.component';
+import { BioComponent } from './ventures/bio/bio.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'ventures', pathMatch: 'full' },
   { path: 'ventures',  component: VenturesComponent },
   { path: 'ventures/about',  component: AboutComponent },
-  //{ path: 'products/:slug', component: ProductDetailComponent },
+  { path: 'ventures/bio/:slug', component: BioComponent },
   { path: 'ventures/contact',  component: ContactComponent },
   { path: 'ventures/d10x',  component: D10xComponent },
   { path: 'ventures/innovation',  component: InnovationComponent },

@@ -10,6 +10,7 @@ export class TeamComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // write function to get all bio content items
   }
 
 }

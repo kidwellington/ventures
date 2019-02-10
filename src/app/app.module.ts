@@ -15,6 +15,8 @@ import { PortfolioComponent } from './ventures/investing/portfolio/portfolio.com
 import { TeamComponent } from './ventures/team/team.component';
 import { PerspectivesComponent } from './ventures/perspectives/perspectives.component';
 import { ContactComponent } from './ventures/contact/contact.component';
+import { BioComponent } from './ventures/bio/bio.component';
+import { ContentfulService } from './services/contentful.service';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,14 @@ import { ContactComponent } from './ventures/contact/contact.component';
     PortfolioComponent,
     TeamComponent,
     PerspectivesComponent,
-    ContactComponent
+    ContactComponent,
+    BioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ContentfulService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
