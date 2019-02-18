@@ -14,4 +14,21 @@ export class ContentfulService {
 
   constructor() { }
 
+   // fetch bios
+   getBios(query?: object): Promise<Entry<any>[]> {
+    return this.cdaClient.getEntries(Object.assign({
+      content_type: 'bio'
+    }, query))
+    .then(res => res.items);
+  }
+
+  // fetch bios with a given slug
+  // and return one of them
+  getBio(slug: string): Promise<Entry<any>> {
+    return this.getBios({ 'fields.slug': slug })
+    .then(items => items[0])
+  }
+
+  
+
 }
