@@ -17,6 +17,8 @@ import { PerspectivesComponent } from './ventures/perspectives/perspectives.comp
 import { ContactComponent } from './ventures/contact/contact.component';
 import { BioComponent } from './ventures/bio/bio.component';
 import { ContentfulService } from './services/contentful.service';
+import { MenuComponent } from './ventures/ui/menu/menu.component';
+import { FooterComponent } from './ventures/ui/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ContentfulService } from './services/contentful.service';
     TeamComponent,
     PerspectivesComponent,
     ContactComponent,
-    BioComponent
+    BioComponent,
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

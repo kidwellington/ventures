@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="378px" height="10px" viewBox="0 0 378 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>pattern divider</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <pattern id="pattern-1" width="4" height="4" x="-4" y="219" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-2" transform="scale(0.5,0.5)"></use>
+        </pattern>
+        <image id="image-2" width="8" height="8" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABGdBTUEAA1teXP8meAAAACpJREFUGBljZFia958BCP5HTWQE0eiACV0Anc/4/z/YAHRxOJ+gCYNBAQBWJgcJts5+6gAAAABJRU5ErkJggg=="></image>
+    </defs>
+    <g id="article-basic" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -223.000000)">
+        <g fill="url(#pattern-1)" id="pattern-divider">
+            <rect x="0" y="223" width="380" height="10"></rect>
+        </g>
+    </g>
+</svg>

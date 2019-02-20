@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="13px" viewBox="0 0 6 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-tip</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="1280_Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-264.000000, -2275.000000)">
+        <g id="02-page-content" transform="translate(0.000000, 850.000000)" stroke="#FFFFFF">
+            <g id="02-what-we-do" transform="translate(0.000000, 749.000000)">
+                <g id="mission" transform="translate(0.000000, 326.000000)">
+                    <g id="mission-statement" transform="translate(150.000000, 125.000000)">
+                        <g id="cta-with-arrow" transform="translate(0.000000, 220.000000)">
+                            <g id="arrow-tip-white" transform="translate(114.000000, 6.000000)">
+                                <polyline points="0 0 6 5.5 0 11"></polyline>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

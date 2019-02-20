@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="13px" viewBox="0 0 6 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-tip-green</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="arrow-tip" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, 1.000000)">
+        <polyline id="arrow-tip-green" stroke="#002A54" points="0 0 6 5.5 0 11"></polyline>
+    </g>
+</svg>
