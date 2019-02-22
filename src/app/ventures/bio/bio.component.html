@@ -1,3 +1,52 @@
-<p>
-  bio works!
-</p>
+<div class="container member-container" *ngIf="bio">
+  <!--  PHOTO AND NAME -->
+  <section id="member-photo-name">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-5">
+        <img class="team-member profile" src="{{bio.fields.headshot.fields.file.url}}" alt="Vanessa Colella" />
+      </div>
+      <div class="col-xs-12 text-center top5">	
+        <h3 class="colored">{{bio.fields.name}}</h3>
+        <p class="position top20 hidden-xs">{{bio.fields.title}}</p>
+        <p class="position top20 visible-xs">{{bio.fields.title}}</p>
+      </div>
+    </div>
+  </section>
+  
+  <!--  SOCIAL MEDIA ICONS -->
+  <section class="social-media bottom45 top25">
+    <div class="row">
+      <div class="col-xs-12">
+        <a class="sm-linkedin" href="https://www.linkedin.com/in/vanessacolella" target="_blank"><svg role="img" aria-label="linkedin" width="15px" height="15px" viewBox="0 0 15 15" class="icon linkedin"><path d="M0.35312794,4.48917915 L3.08184384,4.48917915 L3.08184384,13.9991036 L0.35312794,13.9991036 L0.35312794,4.48917915 Z M1.64793039,3.29965425 L1.62817498,3.29965425 C0.640404516,3.29965425 -3.55271368e-15,2.57267256 -3.55271368e-15,1.65206813 C-3.55271368e-15,0.712639262 0.659336783,0 1.66686265,0 C2.67356538,0 3.2925682,0.710846459 3.31232361,1.64937892 C3.31232361,2.56998335 2.67356538,3.29965425 1.64793039,3.29965425 L1.64793039,3.29965425 Z M14,14 L10.905809,14 L10.905809,9.07785888 C10.905809,7.7897298 10.4218015,6.91125624 9.35747883,6.91125624 C8.54339135,6.91125624 8.09066322,7.50377769 7.87993885,8.07657831 C7.80091722,8.28095787 7.81326435,8.56690998 7.81326435,8.85375848 L7.81326435,14 L4.74788335,14 C4.74788335,14 4.78739417,5.28159816 4.74788335,4.48917915 L7.81326435,4.48917915 L7.81326435,5.9816878 C7.9943556,5.32910744 8.97389464,4.39774619 10.5370414,4.39774619 C12.4763641,4.39774619 14,5.76655142 14,8.71123063 L14,14 L14,14 Z"></path></svg></a> 
+      </div>
+    </div>
+  </section>
+  
+  <!--  PULLQUOTE -->
+  <section id="member-pullquote">
+    <div class="row quote">
+      <div class="col-md-8 col-md-offset-2 quote-bg pad10">
+        <p class="heading-3">{{bio.fields.quote}}</p>	
+        <div class="row member-divider"></div>
+      </div>
+    </div>
+  </section>
+
+  <!--  BIO COPY -->
+  <section id="bio-copy" class="member-bio">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 bottom60">
+        <h4 class="dark">Expertise</h4>
+        <p>Corporate Development, Strategic Partnerships, Mobile Payments, Emerging Payments, Entrepreneurship, Education, Venture Capital, Marketing</p>
+      </div>
+      <div class="col-md-8 col-md-offset-2 bottom60 bio">
+        <h4 class="dark">Bio</h4>
+        <p>Vanessa Colella is Citi’s Chief Innovation Officer and Head of Citi Ventures, focused on igniting change and reimagining solutions that drive economic progress for clients. Deeply integrated with Citi colleagues, clients, and the innovation ecosystem, Citi Ventures accelerates and discovers new sources of value by exploring, incubating, and investing in new ideas.</p>
+        <p>Before assuming the role of Chief Innovation Officer, Vanessa led venture investing and D10XSM for Citi Ventures, and previously ran marketing for Citi’s North American Consumer Bank. She joined Citibank in 2010 from U.S. Venture Partners (USVP), where she was an entrepreneur-in-residence. Prior to USVP, Vanessa was Head of NA Marketing and then SVP of Insights at Yahoo, where she was responsible for developing and executing the company’s consumer data strategy. She was previously a Partner at McKinsey &amp; Company.</p>
+        <p>She was recognized on the Global Corporate Venturing Power List in 2017 and 2018 and was named to Institutional Investor’s Fintech Finance list from 2015- 2018. Her work conceiving and launching CitiBike led Citi to win Advertising Age’s 2013 Creativity Award and the Gold Pencil in 2014.</p>
+        <p>Vanessa received her masters’ degrees from Columbia University and M.I.T. as well as a Ph.D. from M.I.T.’s Media Lab. A charter member of Teach for America, she is a published author and lecturer, taught courses at the Santa Fe Institute, and previously served as a research fellow at Rockefeller University. She holds an S.B. degree in molecular biology from M.I.T. and currently serves as a member of the Corporation’s Visiting Committee for the Media Lab. She resides in San Francisco with her husband and son.</p>
+      </div>
+    </div>
+  </section>
+  
+</div> 
