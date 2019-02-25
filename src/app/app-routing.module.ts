@@ -19,15 +19,15 @@ const routes: Routes = [
   { path: 'ventures',  component: VenturesComponent },
   { path: 'ventures/about',  component: AboutComponent },
   { path: 'ventures/bio/:slug', component: BioComponent },
-  { path: 'ventures/contact',  component: ContactComponent },
+  { path: 'ventures/contact-us',  component: ContactComponent },
   { path: 'ventures/d10x',  component: D10xComponent },
   { path: 'ventures/innovation',  component: InnovationComponent },
-  { path: 'ventures/investing',  component: InvestingComponent },
+  { path: 'ventures/venture-investing',  component: InvestingComponent },
   { path: 'ventures/perspectives',  component: PerspectivesComponent },
   { path: 'ventures/studio',  component: StudioComponent },
   { path: 'ventures/team',  component: TeamComponent },
   { path: 'ventures/investing/at-a-glance',  component: AtAGlanceComponent },
-  { path: 'ventures/investing/portfolio',  component: PortfolioComponent },
+  { path: 'ventures/venture-investing/portfolio',  component: PortfolioComponent },
   { path: 'ventures/studio/cupid',  component: CupidComponent }
 ];
 

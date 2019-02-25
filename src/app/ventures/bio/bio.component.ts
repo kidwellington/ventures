@@ -3,6 +3,7 @@ import { switchMap } from 'rxjs/operators';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Entry } from 'contentful';
 import { ContentfulService } from '../../services/contentful.service';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 @Component({
   selector: 'app-bio',
@@ -11,7 +12,8 @@ import { ContentfulService } from '../../services/contentful.service';
 })
 export class BioComponent implements OnInit {
   public bio: Entry<any>;
-  public isLoaded : boolean = false;
+  public htmlBio: any;
+  public htmlExpertise: any;
 
   constructor(
     private contentfulService: ContentfulService,
@@ -23,7 +25,12 @@ export class BioComponent implements OnInit {
     .pipe(switchMap((params: ParamMap) => this.contentfulService.getBio(params.get('slug'))))
     .subscribe(bio => {
       this.bio = bio;
+      this.htmlBio = documentToHtmlString(bio.fields.bio);
+      this.htmlExpertise = documentToHtmlString(bio.fields.expertise);
       console.log(this.bio)
+      console.log("the bio string is " + documentToHtmlString(bio.fields.bio));
+      console.log("the expertise string is " + documentToHtmlString(bio.fields.expertise));
+      console.log(this.bio.fields.socialNetworks[0].fields.icon.fields.file.url);
     });
 
 
