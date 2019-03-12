@@ -19,7 +19,6 @@ export class FooterComponent implements OnInit {
     }).then(footer => {
       this.footer = footer.items[0];
       console.log(this.footer)
-      console.log(this.footer.fields.navLinks)
     })
   }
 

@@ -1,3 +1,38 @@
-<p>
-  team works!
-</p>
+<main class="team page-team" id="content" role="main">
+  <section class="hero-module generic team container">
+    <div class="row hero-content">
+      <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
+        <h1 class="gradient"><span>Team</span></h1>
+      </div>				
+    </div>
+  </section>
+
+  <div class="container">
+    <div *ngIf="bios">
+      <section id="vi" class="team-browse" name="vi" role="tabpanel" aria-labelledby="tab2" aria-hidden="false" *ngFor="let category of categories">
+        <div class="row">
+          <div class="team-header col-md-10 col-xs-10 col-md-offset-1 col-xs-offset-1">
+            <h2 class="vline gradient"><span class="">{{category.fields.title}}</span></h2>
+          </div>
+        </div>
+        <div class="row author-medium">
+          <div [class.col-sm-offset-1]="i == 0 || i == 4 || i == 8 || i == 12" 
+                class="col-xs-6 col-sm-2 team-p" 
+                *ngFor="let bio of biosForCategories[category.sys.id]; let i = index">
+            <a [routerLink]="['/ventures/bio', bio.fields.slug]" target="" class="profile-link pl-overlay">
+              <img *ngIf="bio.fields.teamLead == true" class="img__leads" src="/assets/images/team/ellipsegradient.png" alt="">
+              <div class="img__overlay" aria-hidden="true"></div>
+              <img class="profile-photo" src="{{bio.fields.headshot.fields.file.url}}" alt="{{bio.fields.name}}">
+            </a>
+            <div class="profile-info">
+              <a [routerLink]="['/ventures/bio', bio.fields.slug]" class="font_url_color">
+                <p class="name centered">{{bio.fields.name}}</p>
+                <p class="position light centered">{{bio.fields.title}}</p>
+              </a>
+            </div>
+          </div>		
+        </div>
+      </section>
+    </div>
+  </div>
+</main>  

@@ -10,6 +10,8 @@ import { ContentfulService } from '../../services/contentful.service';
 export class TeamComponent implements OnInit {
   public bios: Entry<any>[];
   public isLoaded : boolean = false;
+  public categories: Entry<any>[];
+  public biosForCategories: {} = {};
 
   constructor(private contentfulService: ContentfulService) { }
 
@@ -20,6 +22,26 @@ export class TeamComponent implements OnInit {
       this.bios = bios;
       console.log(this.bios)
     })
+
+    this.contentfulService.getCategories()
+    .then(categories => {
+      this.categories = categories;
+      console.log(this.categories)
+      return Promise.all(this.categories.map(
+        category => this.contentfulService.getBios({
+          'fields.category.sys.id': category.sys.id
+        })
+        
+      ))
+    })
+    .then(teamCategories => {
+      this.categories.forEach((cat, i) => {
+        this.biosForCategories[cat.sys.id] = teamCategories[i];
+        console.log(this.biosForCategories[cat.sys.id])
+      });
+    })
+
+    
   }
 
 }

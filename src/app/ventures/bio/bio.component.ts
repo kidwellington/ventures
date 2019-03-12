@@ -28,9 +28,6 @@ export class BioComponent implements OnInit {
       this.htmlBio = documentToHtmlString(bio.fields.bio);
       this.htmlExpertise = documentToHtmlString(bio.fields.expertise);
       console.log(this.bio)
-      console.log("the bio string is " + documentToHtmlString(bio.fields.bio));
-      console.log("the expertise string is " + documentToHtmlString(bio.fields.expertise));
-      console.log(this.bio.fields.socialNetworks[0].fields.icon.fields.file.url);
     });
 
 

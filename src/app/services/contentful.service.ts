@@ -29,6 +29,14 @@ export class ContentfulService {
     .then(items => items[0])
   }
 
+  // fetch categories
+  getCategories(): Promise<Entry<any>[]> {
+    return this.cdaClient.getEntries({
+      content_type: 'category'
+    })
+    .then(res => res.items);
+  }
+
   
 
 }
