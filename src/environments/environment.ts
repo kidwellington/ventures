@@ -7,6 +7,7 @@ export const environment = {
   contentful: {
     deliveryUrl: 'cdn.contentful.com',
     previewUrl: 'preview.contentful.com',
+    webappUrl: 'https://app.contentful.com',
     environment: 'ventures-dev',
     space: '',
     deliveryToken: '',

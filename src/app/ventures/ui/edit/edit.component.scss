@@ -1,0 +1,17 @@
+.pencil-icon {
+    border-radius: 16px;
+    border: 2px solid #ccc;
+    background: url(/assets/images/pencil-edit-button.svg) 9px/16px no-repeat #fff;
+    height: 30px;
+    width: 71px;
+    padding: 0px 8px;
+    text-align: right;
+    position: absolute;
+    //position: fixed;
+    top: 40%;
+    right: 20px;
+    z-index: 100;
+}
+.pencil-icon:hover {
+    border: 2px solid #9cc6ef;
+}

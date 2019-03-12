@@ -14,6 +14,7 @@ export class BioComponent implements OnInit {
   public bio: Entry<any>;
   public htmlBio: any;
   public htmlExpertise: any;
+  //public id: any;
 
   constructor(
     private contentfulService: ContentfulService,
@@ -27,7 +28,9 @@ export class BioComponent implements OnInit {
       this.bio = bio;
       this.htmlBio = documentToHtmlString(bio.fields.bio);
       this.htmlExpertise = documentToHtmlString(bio.fields.expertise);
+      //this.id = bio.sys.id
       console.log(this.bio)
+      //console.log(this.id)
     });
 
 

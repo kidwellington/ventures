@@ -19,6 +19,7 @@ import { BioComponent } from './ventures/bio/bio.component';
 import { ContentfulService } from './services/contentful.service';
 import { MenuComponent } from './ventures/ui/menu/menu.component';
 import { FooterComponent } from './ventures/ui/footer/footer.component';
+import { EditComponent } from './ventures/ui/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FooterComponent } from './ventures/ui/footer/footer.component';
     ContactComponent,
     BioComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
