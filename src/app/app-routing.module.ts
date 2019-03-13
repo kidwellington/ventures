@@ -17,16 +17,16 @@ import { BioComponent } from './ventures/bio/bio.component';
 const routes: Routes = [
   { path: '', redirectTo: 'ventures', pathMatch: 'full' },
   { path: 'ventures',  component: VenturesComponent },
-  { path: 'ventures/about',  component: AboutComponent },
+  { path: 'ventures/about-citi-ventures',  component: AboutComponent },
   { path: 'ventures/bio/:slug', component: BioComponent },
   { path: 'ventures/contact-us',  component: ContactComponent },
   { path: 'ventures/d10x',  component: D10xComponent },
-  { path: 'ventures/innovation',  component: InnovationComponent },
+  { path: 'ventures/innovation-network-and-emerging-technology',  component: InnovationComponent },
   { path: 'ventures/venture-investing',  component: InvestingComponent },
   { path: 'ventures/perspectives',  component: PerspectivesComponent },
   { path: 'ventures/studio',  component: StudioComponent },
   { path: 'ventures/team',  component: TeamComponent },
-  { path: 'ventures/investing/at-a-glance',  component: AtAGlanceComponent },
+  { path: 'ventures/venture-investing/at-a-glance',  component: AtAGlanceComponent },
   { path: 'ventures/venture-investing/portfolio',  component: PortfolioComponent },
   { path: 'ventures/studio/cupid',  component: CupidComponent }
 ];

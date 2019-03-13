@@ -9,13 +9,19 @@ import { ContentfulService } from '../../../services/contentful.service';
 })
 export class MenuComponent implements OnInit {
   public header: Entry<any>;
+  public show: boolean = false;
 
   constructor(private contentfulService: ContentfulService) { }
+
+  toggle() {
+    this.show = !this.show;
+  }
 
   ngOnInit() {
     this.contentfulService.cdaClient.getEntries({
       content_type: 'navigation',
-      'sys.id': '3f6Nj4v8Nad2kVNId4eBL7'
+      'sys.id': '3f6Nj4v8Nad2kVNId4eBL7',
+      include: 3
     }).then(header => {
       this.header = header.items[0];
       console.log(this.header)

@@ -1,0 +1,11 @@
+ul.dropdown-menu > li > a {
+    white-space: inherit;
+}
+ul.nav li._dropdown > ul.dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 70px;
+}
+.navbar-default .navbar-nav > li > a {
+    cursor: pointer;
+}
