@@ -20,6 +20,8 @@ import { ContentfulService } from './services/contentful.service';
 import { MenuComponent } from './ventures/ui/menu/menu.component';
 import { FooterComponent } from './ventures/ui/footer/footer.component';
 import { EditComponent } from './ventures/ui/edit/edit.component';
+import { HeroComponent } from './ventures/ui/hero/hero.component';
+import { FeatureComponent } from './ventures/ui/feature/feature.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { EditComponent } from './ventures/ui/edit/edit.component';
     BioComponent,
     MenuComponent,
     FooterComponent,
-    EditComponent
+    EditComponent,
+    HeroComponent,
+    FeatureComponent
   ],
   imports: [
     BrowserModule,

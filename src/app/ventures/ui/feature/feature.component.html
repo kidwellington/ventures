@@ -1,0 +1,27 @@
+<section id="approach" class="approach container fixedSpacing ventures-feature">
+  <div class="row">
+    <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
+      <h2 class="vline gradient">{{entry.fields.header}}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 bottom20">
+      <p>{{entry.fields.description}}</p>
+    </div>
+  </div>
+  <div id="whatwedo-approach" class="vCarousel-container wwd">
+    <div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
+      <div class="row adjusted-3-col ventures-row" *ngFor="let row of entry.fields.rowData">
+        <div class="col-xs-12 col-sm-3 spacing" *ngFor="let item of row.fields.itemData">
+          <h4>{{item.fields.header}}</h4>
+          <p>{{item.fields.descriptionText}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div [innerHTML]="entry.fields.footer" 
+      class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 fixedSpacingHalf top40 m-topHalf">
+    </div>
+  </div>
+</section>
