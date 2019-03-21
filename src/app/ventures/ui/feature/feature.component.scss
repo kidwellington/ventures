@@ -1,10 +1,38 @@
 @media (min-width: 768px) {
-    .adjusted-3-col .col-sm-3 {
-        width: 27%;
-    }
+  .adjusted-3-col .col-sm-3 {
+    width: 27%;
+  }
 }
 
 .ventures-feature a {
+  color: #0076D1;
+  background: url(/assets/images/arrow-tip-default.svg) right 3px no-repeat;
+  padding-right: 14px;
+  text-transform: capitalize;
+  font-size: inherit;
+  font-weight: 900;
+  font-family: Interstate_Bold,sans-serif,sans-serif;
+}
+.ventures-row { 
+  margin-bottom: 40px;
+
+  &:last-of-type { 
+    margin-bottom: 0px;
+  }
+
+  .spacing:last-of-type {
+    margin-right: 0;
+  }
+
+  h4 {
+    background: linear-gradient(left,#0556A5,#057F52);
+    background: -webkit-linear-gradient(left,#0556A5,#057F52 40%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  a {
     color: #0076D1;
     background: url(/assets/images/arrow-tip-default.svg) right 3px no-repeat;
     padding-right: 14px;
@@ -12,35 +40,5 @@
     font-size: inherit;
     font-weight: 900;
     font-family: Interstate_Bold,sans-serif,sans-serif;
-}
-
-
-.ventures-row { 
-    margin-bottom: 40px;
-        
-    &:last-of-type { 
-        margin-bottom: 0px;
-    }
-
-    .spacing:last-of-type {
-        margin-right: 0;
-    }
-
-    h4 {
-        background: linear-gradient(left,#0556A5,#057F52);
-        background: -webkit-linear-gradient(left,#0556A5,#057F52 40%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    a {
-        color: #0076D1;
-        background: url(/assets/images/arrow-tip-default.svg) right 3px no-repeat;
-        padding-right: 14px;
-        text-transform: capitalize;
-        font-size: inherit;
-        font-weight: 900;
-        font-family: Interstate_Bold,sans-serif,sans-serif;
-    }
+  }
 }
