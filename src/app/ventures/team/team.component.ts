@@ -38,6 +38,12 @@ export class TeamComponent implements OnInit {
       this.categories.forEach((cat, i) => {
         this.biosForCategories[cat.sys.id] = teamCategories[i];
         console.log(this.biosForCategories[cat.sys.id])
+        if (teamCategories[i].length == 0) {
+          console.log('empty')
+        }
+        else {
+          console.log('full')
+        }
       });
     })
 
