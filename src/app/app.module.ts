@@ -22,6 +22,7 @@ import { FooterComponent } from './ventures/ui/footer/footer.component';
 import { EditComponent } from './ventures/ui/edit/edit.component';
 import { HeroComponent } from './ventures/ui/hero/hero.component';
 import { FeatureComponent } from './ventures/ui/feature/feature.component';
+import { PartnerComponent } from './ventures/ui/partner/partner.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { FeatureComponent } from './ventures/ui/feature/feature.component';
     FooterComponent,
     EditComponent,
     HeroComponent,
-    FeatureComponent
+    FeatureComponent,
+    PartnerComponent
   ],
   imports: [
     BrowserModule,

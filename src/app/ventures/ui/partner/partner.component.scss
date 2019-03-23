@@ -1,0 +1,27 @@
+@media (min-width:768px) {
+    .all-partners:hover {
+      background-color: rgba(255,255,255,.95);
+      border-radius: 30px;
+      box-shadow: 0 5px 30px 0 rgba(0,165,110,.15);
+      cursor: pointer;
+      transition: .2s
+    }
+    .all-partners:hover .partner-over.in-middle {
+      transition: .5s
+    }
+    .all-partners:hover .partner-over img { 
+      margin-bottom: 10px; 
+      transform: scale(1.1);
+    }
+    .all-partners:hover .partner-over p {
+      font-family: Interstate_Regular,sans-serif;
+      display: inline-block;
+      font-size: 14px;
+      padding: 0 5px;
+    }
+    .all-partners:hover .partner-over p.discover {
+      display: block;
+      text-align: center;
+      margin-bottom: 0;
+    }
+  }

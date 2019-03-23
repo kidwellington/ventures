@@ -1,3 +1,76 @@
-<p>
-  portfolio works!
-</p>
+<main class="portfolio" id="content" role="main">
+  <section class="hero-module generic portfolio container">
+    <div class="row hero-content">
+      <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
+        <h1 class="gradient"><span>Portfolio</span></h1>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="container portfolio page-portfolio" *ngIf="partners">
+  <div class="row">
+    <!-- <div class="row hidden-xs bottom20" id="portfolio-filter-desk">
+      <div class="col-sm-12">
+        <ul class="nav nav-pills" role="tablist">
+          <li id="tab1" role="presentation" class="active"><a role="tab" aria-selected="true" href="#"
+              class="show-all"><span>All Companies</span>
+              <div class="gradient-bar hidden-xs"></div>
+            </a></li>
+          <li id="tab2" role="presentation"><a role="tab" aria-selected="false" href="#"
+              class="show-fst"><span>Financial Services &amp; Technology</span>
+              <div class="gradient-bar hidden-xs"></div>
+            </a></li>
+          <li id="tab3" role="presentation"><a role="tab" aria-selected="false" href="#" class="show-daml"><span>Data
+                Analytics &amp; Machine Learning</span>
+              <div class="gradient-bar hidden-xs"></div>
+            </a></li>
+          <li id="tab4" role="presentation"><a role="tab" aria-selected="false" href="#" class="show-cp"><span>Commerce
+                &amp;<br>Payments</span>
+              <div class="gradient-bar hidden-xs"></div>
+            </a></li>
+          <li id="tab5" role="presentation"><a role="tab" aria-selected="false" href="#"
+              class="show-seit"><span>Security &amp;<br>Enterprise IT</span>
+              <div class="gradient-bar hidden-xs"></div>
+            </a></li>
+          <li id="tab6" role="presentation"><a role="tab" aria-selected="false" href="#" class="show-mce"><span>Customer
+                Experience &amp;<br>Marketing</span>
+              <div class="gradient-bar hidden-xs"></div>
+            </a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row hidden-xs">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <hr class="green">
+      </div>
+    </div> -->
+    <div class="col-xs-12 col-sm-12 col-md-12 partners-stage" id="company-list">
+      <!-- <div class="row">
+        <div class="col-sm-2 col-md-2 mobile-menu-filter">
+          <h6>Filter by Focus Area</h6>
+          <p class="focus-area-filter" role="button" tabindex="0">All</p>
+          <div class="focus-area-overlay">
+            <img class="close-overlay" src="/assets/images/x-dark.png" alt="close filter">
+            <div class="row">
+              <ul class="col-xs-11 col-xs-offset-1 overlay-sub-menu" role="menu">
+                <li class="filter-header">
+                  <h6>Filter by Focus Area</h6>
+                </li>
+                <li><a href="javascript:void(0)" class="show-all active" role="menuitem">All Companies</a></li>
+                <li><a href="javascript:void(0)" class="show-fst" role="menuitem">Financial Services &amp; Technology
+                  </a></li>
+                <li><a href="javascript:void(0)" class="show-daml" role="menuitem">Data Analytics &amp; Machine
+                    Learning</a></li>
+                <li><a href="javascript:void(0)" class="show-cp" role="menuitem">Commerce &amp; Payments</a></li>
+                <li><a href="javascript:void(0)" class="show-seit" role="menuitem">Security &amp; Enterprise IT</a></li>
+                <li><a href="javascript:void(0)" class="show-mce" role="menuitem">Customer Experience &amp;
+                    Marketing</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <app-partner [entry]="partners"></app-partner>
+    </div>
+  </div>
+</div>
