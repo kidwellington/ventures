@@ -3,24 +3,103 @@
     <div class="row hero-content">
       <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
         <h1 class="gradient"><span>Team</span></h1>
-      </div>				
+      </div>
     </div>
   </section>
 
   <div class="container">
-    <section id="vi" class="team-browse" name="vi" role="tabpanel" aria-labelledby="tab2" aria-hidden="false" *ngFor="let category of categories">
+    <div class="row hidden-xs bottom20" id="team-filter-desk">
+      <div class="col-sm-12">
+        <ul class="nav nav-pills" role="tablist">
+
+          <li id="tab1" role="tab" class="active tab" tabindex="0" aria-controls="all" aria-selected="true"><span>Full
+              Team</span>
+            <div class="gradient-bar hidden-xs"></div>
+          </li>
+
+          <li id="tab2" role="tab" class="tab" tabindex="-1" aria-controls="vi" aria-selected="false"><span>Venture
+              Investing</span>
+            <div class="gradient-bar hidden-xs"></div>
+          </li>
+
+          <li id="tab3" role="tab" class="tab" tabindex="-1" aria-controls="d10x" aria-selected="false">
+            <span>D10X</span>
+            <div class="gradient-bar hidden-xs"></div>
+          </li>
+
+          <li id="tab4" role="tab" class="tab innovation" tabindex="-1" aria-controls="in" aria-selected="false">
+            <span>Innovation Network & Emerging Technology</span>
+            <div class="gradient-bar hidden-xs"></div>
+          </li>
+
+          <li id="tab5" role="tab" class="tab" tabindex="-1" aria-controls="vs" aria-selected="false">
+            <span>Studio</span>
+            <div class="gradient-bar hidden-xs"></div>
+          </li>
+
+          <li id="tab6" role="tab" class="tab" tabindex="-1" aria-controls="operations" aria-selected="false">
+            <span>Finance, Operations & Strategy</span>
+            <div class="gradient-bar hidden-xs"></div>
+          </li>
+
+
+
+        </ul>
+      </div>
+    </div>
+    <div class="row hidden-xs">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <hr class="green">
+      </div>
+    </div>
+
+    <div id="team-filter-mobile" class="visible-xs">
+      <div class="row">
+        <div class="col-xs-12 mobile-menu-filter">
+          <h6>Filter by Team</h6>
+          <p class="focus-area-filter" role="button" tabindex="0">All</p>
+          <div class="focus-area-overlay">
+            <img class="close-overlay" src="/assets/images/x-dark.png" alt="close filter">
+            <div class="row">
+              <ul class="col-xs-11 col-xs-offset-1 overlay-sub-menu" role="menu">
+                <li class="filter-header">
+                  <h6>Filter by team</h6>
+                </li>
+                <li><a href="#all" class="show-all active" role="menuitem" aria-controls="all" aria-selected="true">Full
+                    Team</a></li>
+                <li><a href="#vi" class="show-vi" role="menuitem" aria-controls="vi" aria-selected="false">Venture
+                    Investing</a></li>
+                <li><a href="#d10x" class="show-d10x" role="menuitem" aria-controls="d10x"
+                    aria-selected="false">D10X</a></li>
+                <li><a href="#in" class="show-in" role="menuitem" aria-controls="in" aria-selected="false">Innovation
+                    Network & <br>Emerging Technology</a></li>
+                <li><a href="#vs" class="show-vs" role="menuitem" aria-controls="vs" aria-selected="false">Studio</a>
+                </li>
+                <li><a href="#operations" class="show-operations" role="menuitem" aria-controls="operations"
+                    aria-selected="false">Finance, Operations & Strategy</a></li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <section id="vi" class="team-browse" name="vi" role="tabpanel" aria-labelledby="tab2" aria-hidden="false"
+      *ngFor="let category of categories">
       <div class="row" *ngIf="category.fields.type == 'Team'">
         <div class="team-header col-md-10 col-xs-10 col-md-offset-1 col-xs-offset-1">
           <h2 class="vline gradient"><span class="">{{category.fields.title}}</span></h2>
         </div>
       </div>
       <div class="row author-medium">
-        <div [class.col-sm-offset-1]="i == 0 || i == 4 || i == 8 || i == 12" 
-              class="col-xs-6 col-sm-2 team-p" 
-              *ngFor="let bio of biosForCategories[category.sys.id]; let i = index">
-              <cms-edit [entry]="bio"></cms-edit>
+        <div [class.col-sm-offset-1]="i == 0 || i == 4 || i == 8 || i == 12" class="col-xs-6 col-sm-2 team-p"
+          *ngFor="let bio of biosForCategories[category.sys.id]; let i = index">
+          <cms-edit [entry]="bio"></cms-edit>
           <a [routerLink]="['/ventures/bio', bio.fields.slug]" target="" class="profile-link pl-overlay">
-            <img *ngIf="bio.fields.teamLead == true" class="img__leads" src="/assets/images/team/ellipsegradient.png" alt="">
+            <img *ngIf="bio.fields.teamLead == true" class="img__leads" src="/assets/images/team/ellipsegradient.png"
+              alt="">
             <div class="img__overlay" aria-hidden="true"></div>
             <img class="profile-photo" src="{{bio.fields.headshot.fields.file.url}}" alt="{{bio.fields.name}}">
           </a>
@@ -30,8 +109,8 @@
               <p class="position light centered">{{bio.fields.title}}</p>
             </a>
           </div>
-        </div>		
+        </div>
       </div>
     </section>
   </div>
-</main>  
+</main>

@@ -8,12 +8,12 @@ import { Entry } from 'contentful';
 })
 export class PartnerComponent implements OnInit {
 
-  @Input() entry: Entry<any>;
+  @Input() entry: Entry<any>[];
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.entry.fields)
+    console.log(this.entry)
   }
 
 }
