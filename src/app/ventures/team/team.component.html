@@ -93,8 +93,8 @@
           <h2 class="vline gradient"><span class="">{{category.fields.title}}</span></h2>
         </div>
       </div>
-      <div class="row author-medium">
-        <div [class.col-sm-offset-1]="i == 0 || i == 4 || i == 8 || i == 12" class="col-xs-6 col-sm-2 team-p"
+      <div class="row author-medium row-center">
+        <div class="col-xs-6 col-sm-2 team-p col-center"
           *ngFor="let bio of biosForCategories[category.sys.id]; let i = index">
           <cms-edit [entry]="bio"></cms-edit>
           <a [routerLink]="['/ventures/bio', bio.fields.slug]" target="" class="profile-link pl-overlay">

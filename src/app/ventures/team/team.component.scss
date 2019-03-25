@@ -34,3 +34,24 @@ ul.nav-pills.nav>li.active a:hover,ul.nav-pills.nav>li.active:hover {
 ul.nav-pills .tab {
   cursor: pointer;
 }
+
+.row-center {
+  text-align: center;
+}
+.col-center {
+  display: inline-block;
+  float: none;
+  vertical-align: bottom;
+}
+.col-center:nth-of-type(1), .col-center:nth-of-type(5), .col-center:nth-of-type(9), .col-center:nth-of-type(13) {
+  margin-left: 6%;
+}
+.col-center:nth-of-type(4), .col-center:nth-of-type(8), .col-center:nth-of-type(12), .col-center:nth-of-type(16) {
+  margin-right: 6%;
+}
+.col-center:first-of-type {
+  margin-left: 6%;
+}
+.col-center:last-of-type {
+  margin-right: 6%;
+}
