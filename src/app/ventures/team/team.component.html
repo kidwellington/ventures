@@ -93,21 +93,15 @@
             <h2 class="vline gradient"><span class="">{{category.fields.title}}</span></h2>
           </div>
         </div>
-      </div>
-      <div class="row author-medium row-center">
-        <div class="col-xs-6 col-sm-2 team-p col-center"
-          *ngFor="let bio of biosForCategories[category.sys.id]; let i = index">
-          <cms-edit [entry]="bio"></cms-edit>
-          <a [routerLink]="['/ventures/bio', bio.fields.slug]" target="" class="profile-link pl-overlay">
-            <img *ngIf="bio.fields.teamLead == true" class="img__leads" src="/assets/images/team/ellipsegradient.png"
-              alt="">
-            <div class="img__overlay" aria-hidden="true"></div>
-            <img class="profile-photo" src="{{bio.fields.headshot.fields.file.url}}" alt="{{bio.fields.name}}">
-          </a>
-          <div class="profile-info">
-            <a [routerLink]="['/ventures/bio', bio.fields.slug]" class="font_url_color">
-              <p class="name centered">{{bio.fields.name}}</p>
-              <p class="position light centered">{{bio.fields.title}}</p>
+        <div class="row author-medium row-center">
+          <div class="col-xs-6 col-sm-2 team-p col-center"
+            *ngFor="let bio of biosForCategories[category.sys.id]; let i = index">
+            <cms-edit [entry]="bio"></cms-edit>
+            <a [routerLink]="['/ventures/bio', bio.fields.slug]" target="" class="profile-link pl-overlay">
+              <img *ngIf="bio.fields.teamLead == true" class="img__leads" src="/assets/images/team/ellipsegradient.png"
+                alt="">
+              <div class="img__overlay" aria-hidden="true"></div>
+              <img class="profile-photo" src="{{bio.fields.headshot.fields.file.url}}" alt="{{bio.fields.name}}">
             </a>
             <div class="profile-info">
               <a [routerLink]="['/ventures/bio', bio.fields.slug]" class="font_url_color">

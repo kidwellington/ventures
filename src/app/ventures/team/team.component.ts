@@ -31,7 +31,8 @@ export class TeamComponent implements OnInit {
       console.log(this.categories)
       return Promise.all(this.categories.map(
         category => this.contentfulService.getBios({
-          'fields.category.sys.id': category.sys.id
+          'fields.category.sys.id': category.sys.id,
+          order: 'fields.teamRank'
         })
         
       ))
