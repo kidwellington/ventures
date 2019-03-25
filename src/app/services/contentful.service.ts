@@ -30,10 +30,10 @@ export class ContentfulService {
   }
 
   // fetch categories
-  getCategories(): Promise<Entry<any>[]> {
-    return this.cdaClient.getEntries({
+  getCategories(query?: object): Promise<Entry<any>[]> {
+    return this.cdaClient.getEntries(Object.assign({
       content_type: 'category'
-    })
+    }, query))
     .then(res => res.items);
   }
 

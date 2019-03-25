@@ -23,7 +23,9 @@ export class TeamComponent implements OnInit {
       console.log(this.bios)
     })
 
-    this.contentfulService.getCategories()
+    this.contentfulService.getCategories({
+      order: 'fields.order'
+    })
     .then(categories => {
       this.categories = categories;
       console.log(this.categories)
