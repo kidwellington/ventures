@@ -37,6 +37,13 @@ export class ContentfulService {
     .then(res => res.items);
   }
 
+  // fetch perspectives
+  getPerspectives(query?: object): Promise<Entry<any>[]> {
+    return this.cdaClient.getEntries(Object.assign({
+      content_type: 'perspective'
+    }, query))
+    .then(res => res.items);
+  }
   
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Entry } from 'contentful';
+import { ContentfulService } from '../../services/contentful.service';
 
 @Component({
   selector: 'app-perspectives',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerspectivesComponent implements OnInit {
 
-  constructor() { }
+  public perspectives: Entry<any>[];
+
+  constructor(private contentfulService: ContentfulService) { }
 
   ngOnInit() {
+    // get all perspectives
+    this.contentfulService.getPerspectives()
+    .then(perspectives => {
+      this.perspectives = perspectives;
+      console.log(this.perspectives)
+    })
   }
 
 }
