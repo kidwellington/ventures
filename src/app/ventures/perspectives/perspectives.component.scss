@@ -34,3 +34,10 @@ ul.nav-pills.nav>li.active a:hover,ul.nav-pills.nav>li.active:hover {
 ul.nav-pills .tab {
   cursor: pointer;
 }
+
+@media (min-width: 768px) {
+  .col-sm-offset-040 {
+      margin-left: 4%;
+      margin-bottom: 40px;
+  }
+}
