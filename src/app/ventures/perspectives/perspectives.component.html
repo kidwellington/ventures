@@ -1,4 +1,4 @@
-<main class="landing-perspectives page-perspectives" id="content" role="main">
+<main class="landing-perspectives page-perspectives" id="content" role="main" *ngIf="perspectives">
 
   <!--  HERO -->
   <!-- &.contact, &.perspectives, &.portfolio, &.team, &.whatwedo  -->
@@ -102,19 +102,19 @@
   </section>
 
   <section id="perspectives" class="container fixedSpacingHalf">
-      <div class="perspective-container bottom40 m-bottom0" *ngFor="let perspective of perspectives; let i = index">
-        <div class="row" *ngIf="i == 0" >
+      <div class="perspective-container bottom40 m-bottom0">
+        <div class="row">
           <div id="featured-main" class="col-md-10 col-sm-8 col-md-offset-1 col-sm-offset-2">
             <div class="img-gradient img-container tt-leaf no-img double">
               <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
               <div class="tt-content">
-                <h5 class="eyebrow">{{perspective.fields.category.fields.title}}</h5>
-                <p class="article-title"><a href="{{perspective.fields.link}}"
-                    target="_blank">{{perspective.fields.title}}</a></p>
-                <p class="article-meta">{{perspective.fields.publication}}</p>
-                <p class="article-author">{{perspective.fields.publishDate}}</p>
-                <p class="article-copy hidden-sm hidden-xs" *ngIf="perspective.fields.previewText">
-                  {{perspective.fields.previewText}}</p>
+                <h5 class="eyebrow">{{perspectives[0].fields.category.fields.title}}</h5>
+                <p class="article-title"><a href="{{perspectives[0].fields.link}}"
+                    target="_blank">{{perspectives[0].fields.title}}</a></p>
+                <p class="article-meta">{{perspectives[0].fields.publication}}</p>
+                <p class="article-author">{{perspectives[0].fields.publishDate}}</p>
+                <p class="article-copy hidden-sm hidden-xs" *ngIf="perspectives[0].fields.previewText">
+                  {{perspectives[0].fields.previewText}}</p>
               </div>
             </div>
           </div>
@@ -123,38 +123,36 @@
 
       <div class="perspective-container">
         <div class="row">
-          <div *ngFor="let perspective of perspectives; let i = index">
-            <div class="col-md-5 col-sm-8 col-md-offset-1 col-sm-offset-2 mm-bottom40" *ngIf="i == 1">
+            <div class="col-md-5 col-sm-8 col-md-offset-1 col-sm-offset-2 mm-bottom40">
               <div class="img-gradient img-container tt-leaf no-img">
                 <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
                 <div class="tt-content">
-                  <h5 class="eyebrow">{{perspective.fields.category.fields.title}}</h5>
-                  <p class="article-title"><a href="{{perspective.fields.link}}"
-                      target="_blank">{{perspective.fields.title}}</a></p>
-                  <p class="article-publisher">{{perspective.fields.publication}}
-                    <span *ngIf="perspective.fields.author"> ● </span>
-                    {{perspective.fields.author}}
+                  <h5 class="eyebrow">{{perspectives[1].fields.category.fields.title}}</h5>
+                  <p class="article-title"><a href="{{perspectives[1].fields.link}}"
+                      target="_blank">{{perspectives[1].fields.title}}</a></p>
+                  <p class="article-publisher">{{perspectives[1].fields.publication}}
+                    <span *ngIf="perspectives[1].fields.author"> ● </span>
+                    {{perspectives[1].fields.author}}
                   </p>
-                  <p class="article-author">{{perspective.fields.publishDate}}</p>
+                  <p class="article-author">{{perspectives[1].fields.publishDate}}</p>
                 </div>
               </div>
             </div>
-            <div class="col-md-5 col-sm-8 col-md-offset-0 col-sm-offset-2 m-top40" *ngIf="i == 2">
+            <div class="col-md-5 col-sm-8 col-md-offset-0 col-sm-offset-2 m-top40">
               <div class="img-gradient img-container tt-leaf no-img">
                 <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
                 <div class="tt-content">
-                  <h5 class="eyebrow">{{perspective.fields.category.fields.title}}</h5>
-                  <p class="article-title"><a href="{{perspective.fields.link}}"
-                      target="_blank">{{perspective.fields.title}}</a></p>
-                  <p class="article-publisher">{{perspective.fields.publication}}
-                    <span *ngIf="perspective.fields.author"> ● </span>
-                    {{perspective.fields.author}}
+                  <h5 class="eyebrow">{{perspectives[2].fields.category.fields.title}}</h5>
+                  <p class="article-title"><a href="{{perspectives[2].fields.link}}"
+                      target="_blank">{{perspectives[2].fields.title}}</a></p>
+                  <p class="article-publisher">{{perspectives[2].fields.publication}}
+                    <span *ngIf="perspectives[2].fields.author"> ● </span>
+                    {{perspectives[2].fields.author}}
                   </p>
-                  <p class="article-author">{{perspective.fields.publishDate}}</p>
+                  <p class="article-author">{{perspectives[2].fields.publishDate}}</p>
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
   </section>

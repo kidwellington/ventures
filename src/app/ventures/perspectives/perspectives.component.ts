@@ -20,7 +20,7 @@ export class PerspectivesComponent implements OnInit {
     })
     .then(perspectives => {
       this.perspectives = perspectives;
-      console.log(this.perspectives)
+      console.log(this.perspectives);
     })
   }
 
