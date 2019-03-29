@@ -101,102 +101,94 @@
   <section id="Opinion" class="team-browse" name="opinion" role="tabpanel" aria-labelledby="tab5" aria-hidden="true">
   </section>
 
-  <!-- <section id="perspectives" class="container fixedSpacingHalf">
-    <div class="perspective-container bottom40 m-bottom0">
-      <div class="row">
-        <div id="featured-main" class="col-md-10 col-sm-8 col-md-offset-1 col-sm-offset-2">
-          <div class="img-gradient img-container tt-leaf no-img double">
-            <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
-            <div class="tt-content">
-              <h5 class="eyebrow">Video</h5>
-              <p class="article-title"><a
-                  href="https://cheddar.com/media/head-of-citi-ventures-talks-keeping-up-with-disruptions-on-wall-street"
-                  target="_blank">Vanessa Colella Talks Innovation in Financial Services</a></p>
-              <p class="article-meta">Cheddar </p>
-              <p class="article-author">February 13, 2019</p>
-              <p class="article-copy hidden-sm hidden-xs">Vanessa Colella, Citi's Chief Innovation Officer and Head of
-                Citi Ventures, talks to Cheddar about our approach to innovation and how Citi is delivering solutions to
-                drive value for clients.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="perspective-container">
-      <div class="row">
-        <div class="col-md-5 col-sm-8 col-md-offset-1 col-sm-offset-2 mm-bottom40">
-          <div class="img-gradient img-container tt-leaf no-img">
-            <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
-            <div class="tt-content">
-              <h5 class="eyebrow">News</h5>
-              <p class="article-title"><a
-                  href="http://fortune.com/2019/02/12/goldman-sachs-citi-second-measure-alternative-data/"
-                  target="_blank">Goldman Sachs and Citi Make $20 Million Venture Bet That Private Equity Wants
-                  Consumers’ Credit Card Info</a></p>
-              <p class="article-meta">Fortune &#9679; Lucinda Shen</p>
-              <p class="article-author">February 12, 2019</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-5 col-sm-8 col-md-offset-0 col-sm-offset-2 m-top40">
-          <div class="img-gradient img-container tt-leaf no-img">
-            <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
-            <div class="tt-content">
-              <h5 class="eyebrow">Opinion</h5>
-              <p class="article-title"><a
-                  href="https://www.linkedin.com/pulse/how-job-seekers-can-navigate-new-career-jungle-gym-vanessa-colella/"
-                  target="_blank">How Job-seekers Can Navigate the New Career Jungle Gym</a></p>
-              <p class="article-meta">LinkedIn &#9679; Vanessa Colella</p>
-              <p class="article-author">January 15, 2019</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section> -->
-
-
-  <div class="container">
-
-    <section id="perspectives-articles">
-
-      <div id="perspectives-articles-main" class="fixedSpacingHalf">
-        <div class="row vPerspectives top40">
-          <div class="col-xs-12 col-sm-3 col-sm-offset-040" *ngFor="let perspective of perspectives">
-            <div class="no-image article-card img-container">
-              <div class="vContent">
-                <p class="eyebrow">{{perspective.fields.category.fields.title}}</p>
-                <p class="article-title">
-                  <a href="{{perspective.fields.link}}" target="_blank" class="">{{perspective.fields.title}}</a>
-                </p>
-                <p class="article-publisher">{{perspective.fields.publication}}
-                    <span *ngIf="perspective.fields.author"> ● </span>
-                    {{perspective.fields.author}}
-                </p>
+  <section id="perspectives" class="container fixedSpacingHalf">
+      <div class="perspective-container bottom40 m-bottom0" *ngFor="let perspective of perspectives; let i = index">
+        <div class="row" *ngIf="i == 0" >
+          <div id="featured-main" class="col-md-10 col-sm-8 col-md-offset-1 col-sm-offset-2">
+            <div class="img-gradient img-container tt-leaf no-img double">
+              <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
+              <div class="tt-content">
+                <h5 class="eyebrow">{{perspective.fields.category.fields.title}}</h5>
+                <p class="article-title"><a href="{{perspective.fields.link}}"
+                    target="_blank">{{perspective.fields.title}}</a></p>
+                <p class="article-meta">{{perspective.fields.publication}}</p>
                 <p class="article-author">{{perspective.fields.publishDate}}</p>
-                <p>
-                  <a href="{{perspective.fields.link}}"
-                    target="_blank" class="cta chevron noGrow dark">Learn more</a>
-                </p>
+                <p class="article-copy hidden-sm hidden-xs" *ngIf="perspective.fields.previewText">
+                  {{perspective.fields.previewText}}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <div class="perspective-container">
+        <div class="row">
+          <div *ngFor="let perspective of perspectives; let i = index">
+            <div class="col-md-5 col-sm-8 col-md-offset-1 col-sm-offset-2 mm-bottom40" *ngIf="i == 1">
+              <div class="img-gradient img-container tt-leaf no-img">
+                <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
+                <div class="tt-content">
+                  <h5 class="eyebrow">{{perspective.fields.category.fields.title}}</h5>
+                  <p class="article-title"><a href="{{perspective.fields.link}}"
+                      target="_blank">{{perspective.fields.title}}</a></p>
+                  <p class="article-publisher">{{perspective.fields.publication}}
+                    <span *ngIf="perspective.fields.author"> ● </span>
+                    {{perspective.fields.author}}
+                  </p>
+                  <p class="article-author">{{perspective.fields.publishDate}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 col-sm-8 col-md-offset-0 col-sm-offset-2 m-top40" *ngIf="i == 2">
+              <div class="img-gradient img-container tt-leaf no-img">
+                <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
+                <div class="tt-content">
+                  <h5 class="eyebrow">{{perspective.fields.category.fields.title}}</h5>
+                  <p class="article-title"><a href="{{perspective.fields.link}}"
+                      target="_blank">{{perspective.fields.title}}</a></p>
+                  <p class="article-publisher">{{perspective.fields.publication}}
+                    <span *ngIf="perspective.fields.author"> ● </span>
+                    {{perspective.fields.author}}
+                  </p>
+                  <p class="article-author">{{perspective.fields.publishDate}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
 
+
+  <div class="container">
+    <section id="perspectives-articles">
+      <div id="perspectives-articles-main" class="fixedSpacingHalf">
+        <div class="row vPerspectives top40">
+          <div class="col-xs-12 col-sm-3 col-sm-offset-040" *ngFor="let perspective of perspectives; let i = index">
+            <div class="no-image article-card img-container" *ngIf="i > 2">
+              <div class="vContent">
+                <p class="eyebrow">{{perspective.fields.category.fields.title}}</p>
+                <p class="article-title">
+                  <a href="{{perspective.fields.link}}" target="_blank" class="">{{perspective.fields.title}}</a>
+                </p>
+                <p class="article-publisher">{{perspective.fields.publication}}
+                  <span *ngIf="perspective.fields.author"> ● </span>
+                  {{perspective.fields.author}}
+                </p>
+                <p class="article-author">{{perspective.fields.publishDate}}</p>
+                <p>
+                  <a href="{{perspective.fields.link}}" target="_blank" class="cta chevron noGrow dark">Learn more</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row top30 fixedSpacingHalf">
         <div class="col-xs-12 col-sm-12 text-center margin-lef">
           <a class="view more cta chevron noGrow dark lm" href="#ViewMore">View More</a>
         </div>
       </div>
-
     </section>
-
   </div>
-
-
 </main>

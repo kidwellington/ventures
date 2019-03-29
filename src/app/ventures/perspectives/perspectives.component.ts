@@ -15,7 +15,9 @@ export class PerspectivesComponent implements OnInit {
 
   ngOnInit() {
     // get all perspectives
-    this.contentfulService.getPerspectives()
+    this.contentfulService.getPerspectives({
+      order: '-fields.publishDate'
+    })
     .then(perspectives => {
       this.perspectives = perspectives;
       console.log(this.perspectives)
