@@ -112,7 +112,7 @@
                 <p class="article-title"><a href="{{perspectives[0].fields.link}}"
                     target="_blank">{{perspectives[0].fields.title}}</a></p>
                 <p class="article-meta">{{perspectives[0].fields.publication}}</p>
-                <p class="article-author">{{perspectives[0].fields.publishDate}}</p>
+                <p class="article-author">{{perspectives[0].fields.publishDate | date:'MMMM dd, yyyy'}}</p>
                 <p class="article-copy hidden-sm hidden-xs" *ngIf="perspectives[0].fields.previewText">
                   {{perspectives[0].fields.previewText}}</p>
               </div>
@@ -134,7 +134,7 @@
                     <span *ngIf="perspectives[1].fields.author"> ● </span>
                     {{perspectives[1].fields.author}}
                   </p>
-                  <p class="article-author">{{perspectives[1].fields.publishDate}}</p>
+                  <p class="article-author">{{perspectives[1].fields.publishDate | date:'MMMM dd, yyyy'}}</p>
                 </div>
               </div>
             </div>
@@ -149,7 +149,7 @@
                     <span *ngIf="perspectives[2].fields.author"> ● </span>
                     {{perspectives[2].fields.author}}
                   </p>
-                  <p class="article-author">{{perspectives[2].fields.publishDate}}</p>
+                  <p class="article-author">{{perspectives[2].fields.publishDate | date:'MMMM dd, yyyy'}}</p>
                 </div>
               </div>
             </div>
@@ -173,7 +173,7 @@
                   <span *ngIf="perspective.fields.author"> ● </span>
                   {{perspective.fields.author}}
                 </p>
-                <p class="article-author">{{perspective.fields.publishDate}}</p>
+                <p class="article-author">{{perspective.fields.publishDate | date:'MMMM dd, yyyy'}}</p>
                 <p>
                   <a href="{{perspective.fields.link}}" target="_blank" class="cta chevron noGrow dark">Learn more</a>
                 </p>
