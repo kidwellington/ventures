@@ -111,7 +111,9 @@
                 <h5 class="eyebrow">{{perspectives[0].fields.category.fields.title}}</h5>
                 <p class="article-title"><a href="{{perspectives[0].fields.link}}"
                     target="_blank">{{perspectives[0].fields.title}}</a></p>
-                <p class="article-meta">{{perspectives[0].fields.publication}}</p>
+                <p class="article-meta">{{perspectives[0].fields.publication}}
+                    <span *ngIf="perspectives[0].fields.author"> ● </span>
+                    {{perspectives[0].fields.author}}</p>
                 <p class="article-author">{{perspectives[0].fields.publishDate | date:'MMMM dd, yyyy'}}</p>
                 <p class="article-copy hidden-sm hidden-xs" *ngIf="perspectives[0].fields.previewText">
                   {{perspectives[0].fields.previewText}}</p>

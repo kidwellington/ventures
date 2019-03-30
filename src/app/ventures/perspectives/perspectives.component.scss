@@ -40,4 +40,7 @@ ul.nav-pills .tab {
       margin-left: 4%;
       margin-bottom: 40px;
   }
+  .row.vPerspectives > div:nth-child(3n+1) {
+    margin-left: 8.33333333%;
+  }
 }
