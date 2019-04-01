@@ -17,14 +17,15 @@ export class TeamComponent implements OnInit {
 
   ngOnInit() {
     // get all bio content items
-    this.contentfulService.getBios()
-    .then(bios => {
-      this.bios = bios;
-      console.log(this.bios)
-    })
+    // this.contentfulService.getBios()
+    // .then(bios => {
+    //   this.bios = bios;
+    //   console.log(this.bios)
+    // })
 
     this.contentfulService.getCategories({
-      order: 'fields.order'
+      order: 'fields.order',
+      'fields.type': 'Team'
     })
     .then(categories => {
       this.categories = categories;
@@ -32,7 +33,8 @@ export class TeamComponent implements OnInit {
       return Promise.all(this.categories.map(
         category => this.contentfulService.getBios({
           'fields.category.sys.id': category.sys.id,
-          order: 'fields.teamRank'
+          order: 'fields.teamRank',
+          select: 'sys,fields.category,fields.headshot,fields.name,fields.slug,fields.teamLead,fields.teamRank,fields.title'
         })
         
       ))
