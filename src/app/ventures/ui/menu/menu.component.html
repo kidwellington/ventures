@@ -36,9 +36,14 @@
         </li>
         <!-- CLOSE LI WWD Dropdown -->
 
-        <li class="menu-i m-portfolio hidden-xs menu-mobile-hide" role="none" *ngFor="let link of header.fields.navLinks">
-          <a role="menuitem" aria-haspopup="false" routerLink="{{link.fields.url}}">{{link.fields.linkText}}</a>
-          <div class="gradient-bar hidden-xs"></div>
+        <li class="menu-i hidden-xs menu-mobile-hide" role="none" *ngFor="let link of header.fields.navLinks">
+          <a *ngIf="!link.fields.externalLink" role="menuitem" aria-haspopup="false" routerLink="{{link.fields.url}}">{{link.fields.linkText}}</a>
+          <a *ngIf="link.fields.externalLink == true && !link.fields.icon" role="menuitem" aria-haspopup="false" href="{{link.fields.url}}" target="_blank">{{link.fields.linkText}}
+          </a>
+          <a *ngIf="link.fields.externalLink == true && link.fields.icon" role="menuitem" aria-haspopup="false" href="{{link.fields.url}}" target="_blank">
+            <img *ngIf="link.fields.icon" class="icon" src="{{link.fields.icon.fields.file.url}}" alt="{{link.fields.icon.fields.title}}" />
+          </a>  
+          <div *ngIf="!link.fields.icon" class="gradient-bar hidden-xs"></div>
         </li>
         <!--
         <li class="menu-i last" role="none">

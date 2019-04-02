@@ -8,4 +8,25 @@ ul.nav li._dropdown > ul.dropdown-menu {
 }
 .navbar-default .navbar-nav > li > a {
     cursor: pointer;
+    padding: 26px 23px 26px 23px;
+}
+// .navbar-default .navbar-nav > li > a:hover {
+//     background:0 0;
+//     text-decoration:none;
+//     color:#000;
+//     font-family:Interstate_Bold,sans-serif
+// }
+.icon {
+    margin: 0 0 0 30px;
+    height: 15px;
+    width: 17px;
+}
+.icon:hover {
+    fill: #057F52;
+}
+
+@media (min-width: 768px) {
+    .navbar-default .navbar-nav > li > a {
+        padding: 26px 23px 26px 23px;
+    }
 }
