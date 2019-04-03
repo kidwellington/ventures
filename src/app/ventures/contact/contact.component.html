@@ -1,8 +1,8 @@
-<main class="contact" id="content" role="main" *ngIf="contacts">
+<main class="contact" id="content" role="main" *ngIf="page">
   <section class="hero-module generic contact container">
     <div class="row hero-content">
       <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
-        <h1 class="gradient"><span>Contact Us</span></h1>
+        <h1 class="gradient"><span>{{page.fields.pageTitle}}</span></h1>
       </div>			
     </div>
   </section>
@@ -10,7 +10,7 @@
     <section id="locations" class="nLocations container">
       <div id="whatwedo-approach" class="vCarousel-container wwd">
         <div class="row vColumns">
-          <div class="col-sm-4 col-md-3 m-bottom40" *ngFor="let contact of contacts">
+          <div class="col-sm-4 col-md-3 m-bottom40" *ngFor="let contact of page.fields.component">
             <div id="location_3" class="location london">
               <h4 class="gradient">{{contact.fields.name}}</h4>
               <address>{{contact.fields.address}}
@@ -29,11 +29,6 @@
       <div class="row">
         <div id="map" class="col-md-12 hidden-xs"></div>
       </div>
-      <!--<div class="row">
-        <div class="col-sm-12 email_tel">
-          <a href="mailto:citiventures@citi.com">citiventures@citi.com</a><br>
-          <a href="tel:650-798-8140">650 798 8140</a>
-        </div>
-      </div>-->
+
     </div>
   </main>

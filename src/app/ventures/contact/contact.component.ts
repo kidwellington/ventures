@@ -11,15 +11,16 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 export class ContactComponent implements OnInit {
 
   public contacts: Entry<any>[];
+  public page: Entry<any>;
 
   constructor(private contentfulService: ContentfulService) { }
 
   ngOnInit() {
     this.contentfulService.cdaClient.getEntries({
-      content_type: 'contact'
-    }).then(contacts => {
-      this.contacts = contacts.items;
-      console.log(this.contacts[0])
+      content_type: 'page'
+    }).then(page => {
+      this.page = page.items[0];
+      console.log(this.page)
       // Quick implementation. Change this to get the Page content type, similar to the 
       // Venture Investing page
     })
