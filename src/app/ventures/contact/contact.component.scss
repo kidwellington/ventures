@@ -1,0 +1,8 @@
+@media (min-width: 768px) {
+    .row.vColumns > div:nth-child(3n+1) {
+        margin-left: 8.33333333%;
+    }
+    .row.vColumns > div:nth-child(1n+4) .location {
+        background: 0 0;
+    }
+  }

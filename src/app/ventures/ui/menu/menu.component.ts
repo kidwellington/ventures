@@ -25,15 +25,6 @@ export class MenuComponent implements OnInit {
     }).then(header => {
       this.header = header.items[0];
       console.log(this.header)
-    
-      // TODO: write logic to distinguish internal links from external links so that
-      // internal links use routerLink and external links use href. Will likely need
-      // to update the Link content type.
-
-      // TODO: get sub-menu links from Contentful and handle like on the main Ventures site
-
-      // TODO: clean up menu link styling
-
 
     })
   }
