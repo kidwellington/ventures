@@ -1,3 +1,70 @@
-<p>
-  innovation works!
-</p>
+<div *ngIf="page">
+  <main id="venture-investing" role="main">
+
+    <!--  HERO -->
+    <!-- &.contact, &.perspectives, &.portfolio, &.team, &.whatwedo  -->
+    <section class="hero-module generic venture-investing container">
+      <div class="row hero-content">
+
+        <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
+          <h1 class="gradient"><span>{{page.fields.pageTitle}}</span></h1>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <div class="venture-investing">
+    <cms-edit [entry]="page"></cms-edit>
+
+
+    <!--  DIVIDER (Animation) -->
+
+    <app-hero [entry]="page.fields.component[0]"></app-hero>
+    <app-feature [entry]="page.fields.component[1]"></app-feature>
+    <app-feature [entry]="page.fields.component[2]"></app-feature>
+
+    
+
+    <section id="news" class="news container fixedSpacing">
+      <div class="row">
+        <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
+          <h2 class="vline gradient">In the News</h2>
+        </div>
+      </div>
+
+      <div class="perspective-container">
+        <div class="row">
+          <div class="col-md-5 col-sm-8 col-md-offset-1 col-sm-offset-2">
+            <div class="img-gradient img-container tt-leaf no-img">
+              <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
+              <div class="tt-content">
+                <h5 class="eyebrow">Press Release</h5>
+                <p class="article-title"><a
+                    href="https://www.businesswire.com/news/home/20181219005388/en/Citi-Partners-Feedzai-Provide-Machine-Learning-Payment"
+                    target="_blank">Citi Partners with Feedzai to Provide Machine Learning Payment Solutions</a></p>
+                <p class="article-author">December 19, 2018 &#9679; Feedzai</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-sm-8 col-md-offset-0 col-sm-offset-2 m-top60">
+            <div class="img-gradient img-container tt-leaf no-img">
+              <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
+              <div class="tt-content">
+                <h5 class="eyebrow">NEWS</h5>
+                <p class="article-title"><a
+                    href="https://techcrunch.com/2018/10/30/freebird-flies-off-with-8m-to-rescue-passengers-after-flight-cancellations/"
+                    target="_blank">Freebird Flies Off with $8M to Rescue Passengers After Flight Cancellations</a></p>
+                <p class="article-meta">TechCrunch</p>
+                <p class="article-author">October 10, 2018 &#9679; Kate Clark</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</div>
