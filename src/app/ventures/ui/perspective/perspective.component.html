@@ -1,0 +1,28 @@
+<section id="news" class="news container fixedSpacing">
+  <div class="row">
+    <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
+      <h2 class="vline gradient">{{entry.fields.header}}</h2>
+    </div>
+  </div>
+  <div class="perspective-container">
+    <div class="row">
+      <div class="col-md-5 col-sm-8 col-sm-offset-2"
+        *ngFor="let perspective of entry.fields.perspectives">
+        <div class="img-gradient img-container tt-leaf no-img">
+          <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
+          <div class="tt-content">
+            <h5 class="eyebrow">{{perspective.fields.category.fields.title}}</h5>
+            <p class="article-title">
+              <a href="{{perspective.fields.link}}" target="_blank" class="">{{perspective.fields.title}}</a>
+            </p>
+            <p class="article-meta">{{perspective.fields.publication}}
+              <span *ngIf="perspective.fields.author"> ● </span>
+              {{perspective.fields.author}}
+            </p>
+            <p class="article-author">{{perspective.fields.publishDate | date:'MMMM dd, yyyy'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
