@@ -1,3 +1,17 @@
-<p>
-  ventures works!
-</p>
+<div *ngIf="page">
+  <main id="venture-investing" role="main">
+    <section class="hero-module generic venture-investing container">
+      <div class="row hero-content">
+        <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
+          <h1 class="gradient"><span>{{page.fields.pageTitle}}</span></h1>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="venture-investing">
+    <cms-edit [entry]="page"></cms-edit>
+    <app-feature [entry]="page.fields.component[0]"></app-feature>
+    <app-hero [entry]="page.fields.component[1]"></app-hero>
+
+  </div>
+</div>

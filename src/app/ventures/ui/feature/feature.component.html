@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-  <div class="row ventures-row-footer">
+  <div class="row ventures-row-footer" *ngIf="entry.fields.footer">
     <div [innerHTML]="entry.fields.footer" 
       class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 fixedSpacingHalf top40 m-topHalf">
     </div>
