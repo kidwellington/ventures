@@ -6,12 +6,17 @@
           <p class="heading-4 bigger bottom0">{{entry.fields.text}}</p>
         </div>
       </div>
+      <div *ngIf="entry.fields.foregroundImg" class="col-md-5 hidden-sm hidden-xs">
+        <img src="{{entry.fields.foregroundImg.fields.file.url}}"
+          alt="{{entry.fields.foregroundImg.fields.description}}">
+      </div>
     </div>
   </div>
   <div class="row vDivider-bg">
     <div class="col-md-12">
       <div class="img-gradient" style="width:100%">
-        <img src="{{entry.fields.backgroundImg.fields.file.url}}" alt="" class="vi-divider hidden-xs">
+        <img src="{{entry.fields.backgroundImg.fields.file.url}}"
+          alt="{{entry.fields.backgroundImg.fields.description}}" class="vi-divider hidden-xs">
         <img src="/assets/images/home/image-mission-mobile.jpg" alt="" class="vi-divider-mobile visible-xs">
       </div>
     </div>
