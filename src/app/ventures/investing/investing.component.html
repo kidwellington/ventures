@@ -1,183 +1,20 @@
 <div *ngIf="page">
   <main id="venture-investing" role="main">
-
-    <!--  HERO -->
-    <!-- &.contact, &.perspectives, &.portfolio, &.team, &.whatwedo  -->
     <section class="hero-module generic venture-investing container">
       <div class="row hero-content">
-
         <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
           <h1 class="gradient"><span>{{page.fields.pageTitle}}</span></h1>
         </div>
-
       </div>
     </section>
-
   </main>
   <div class="venture-investing">
     <cms-edit [entry]="page"></cms-edit>
-
-
-    <!--  DIVIDER (Animation) -->
-
     <app-hero [entry]="page.fields.component[0]"></app-hero>
     <app-feature [entry]="page.fields.component[1]"></app-feature>
     <app-feature [entry]="page.fields.component[2]"></app-feature>
-
-    
-    <section id="innovatives" class="innovatives container fixedSpacing">
-
-      <div class="row">
-        <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
-          <h2 class="vline gradient">Success Stories</h2>
-        </div>
-      </div>
-
-      <!-- BRAZE -->
-      <div class="row fixedSpacingHalf">
-        <div class="col-xs-12 col-sm-10 col-md-10 col-xs-offset-0 col-sm-offset-1">
-          <div class="success-container">
-            <div class="success-logo">
-              <a href="https://www.braze.com/" target="_blank"><img src="/assets/images/logos/braze-logo.png"
-                  alt=""></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-5 col-md-5 col-xs-offset-0 col-sm-offset-1">
-          <div class="success-container">
-            <div class="success-quote">
-              <div class="quote-bg">
-                <p class="heading-3">&quot;Citi Ventures’ investment was instrumental in bolstering our company growth.
-                  The team has been an excellent partner in accelerating our innovation at a global scale and being a
-                  champion of our future business trajectory.&quot;</p>
-                <p class="author">Bill Magnuson</p>
-                <p class="position">Cofounder & CEO, Braze (formerly Appboy)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-5 col-md-5">
-          <p>Soon after investing in Braze, Citi Ventures introduced the company to relevant Citi businesses who saw an
-            opportunity to build stronger customer relationships and enhance our digital capabilities through the
-            platform. Citi Cards and Citi FinTech signed a commercial deal with Braze to power Citi’s mobile messaging
-            capability, providing our customers with intelligent, relevant, and contextual messaging.</p>
-        </div>
-      </div>
-
-      <!-- C2FO -->
-      <div class="row fixedSpacingHalf">
-        <div class="col-xs-12 col-sm-10 col-md-10 col-xs-offset-0 col-sm-offset-1">
-          <div class="success-container">
-            <div class="success-logo">
-              <a href="https://www.c2fo.com/" target="_blank"><img src="/assets/images/logos/c2fo-logo.png" alt=""></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-5 col-md-5 col-xs-offset-0 col-sm-offset-1">
-          <div class="success-container">
-            <div class="success-quote">
-              <div class="quote-bg">
-                <p class="heading-3">&quot;Citi Ventures is an important, strategic investor that brings deep
-                  relationships and a global network that will continue to speed our growth.&quot;</p>
-                <p class="author">Sandy Kemper</p>
-                <p class="position">Founder and CEO of C2FO</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-5 col-md-5">
-          <p>Our investment in C2FO began when Citi Treasury and Trade Solutions (TTS) identified the need for a Dynamic
-            Discounting product to create the only end-to-end trade finance solution for our clients. After extensive
-            analysis of dynamic discounting providers, we identified C2FO as a &quot;best in breed&quot; solution and
-            invested in the company while TTS completed a distribution partnership. Together, TTS and C2FO have closed a
-            wide array of large enterprise customers, including Citi’s Enterprise Supply Chain (ESC) business. TTS has
-            also brought its private-labeled solution to market under the name &quot;Citi Dynamic Discounting,&quot;
-            which is powered by the C2FO technology and service offering.</p>
-        </div>
-      </div>
-
-      <!-- HighRadius -->
-      <div class="row fixedSpacingHalf">
-        <div class="col-xs-12 col-sm-10 col-md-10 col-xs-offset-0 col-sm-offset-1">
-          <div class="success-container">
-            <div class="success-logo">
-              <a href="https://www.highradius.com/" target="_blank"><img src="/assets/images/logos/highradius-logo.png"
-                  alt=""></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-5 col-md-5 col-xs-offset-0 col-sm-offset-1">
-          <div class="success-container">
-            <div class="success-quote">
-              <div class="quote-bg">
-                <p class="heading-3">HighRadius is thrilled to have Citi Ventures as both a partner and an investor.
-                  Leveraging Citi's extensive global network and capabilities, HighRadius will be able to offer an
-                  enhanced proposition to multinational corporations.</p>
-                <p class="author">Sashi Narahari</p>
-                <p class="position">Founder and CEO of HighRadius</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-5 col-md-5">
-          <p>Citi Ventures' journey with HighRadius started when we partnered with Citi Treasury and Trade Solutions
-            (TTS) to vet startups with innovative solutions in the accounts receivable cash applications process. We
-            identified HighRadius as the leading provider and Citi Ventures invested in the company. TTS subsequently
-            announced the launch of Citi<sup>&reg;</sup> Smart Match, which leverages HighRadius' distinctive automation
-            and machine learning technology to make the cash application process more efficient and generate key
-            insights for Citi's corporate clients.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
-          <p>For a complete list of Citi Ventures portfolio companies, <a href="./venture-investing/portfolio.html"
-              class="cta chevron dark">click here</a></p>
-        </div>
-      </div>
-
-
-    </section>
-
-    <section id="news" class="news container fixedSpacing">
-      <div class="row">
-        <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
-          <h2 class="vline gradient">In the News</h2>
-        </div>
-      </div>
-
-      <div class="perspective-container">
-        <div class="row">
-          <div class="col-md-5 col-sm-8 col-md-offset-1 col-sm-offset-2">
-            <div class="img-gradient img-container tt-leaf no-img">
-              <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
-              <div class="tt-content">
-                <h5 class="eyebrow">Press Release</h5>
-                <p class="article-title"><a
-                    href="https://www.businesswire.com/news/home/20181219005388/en/Citi-Partners-Feedzai-Provide-Machine-Learning-Payment"
-                    target="_blank">Citi Partners with Feedzai to Provide Machine Learning Payment Solutions</a></p>
-                <p class="article-author">December 19, 2018 &#9679; Feedzai</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-5 col-sm-8 col-md-offset-0 col-sm-offset-2 m-top60">
-            <div class="img-gradient img-container tt-leaf no-img">
-              <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
-              <div class="tt-content">
-                <h5 class="eyebrow">NEWS</h5>
-                <p class="article-title"><a
-                    href="https://techcrunch.com/2018/10/30/freebird-flies-off-with-8m-to-rescue-passengers-after-flight-cancellations/"
-                    target="_blank">Freebird Flies Off with $8M to Rescue Passengers After Flight Cancellations</a></p>
-                <p class="article-meta">TechCrunch</p>
-                <p class="article-author">October 10, 2018 &#9679; Kate Clark</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
+    <app-innovative [entry]="page.fields.component[3]"></app-innovative>
+    <app-perspective [entry]="page.fields.component[4]"></app-perspective>
 
   </div>
 </div>

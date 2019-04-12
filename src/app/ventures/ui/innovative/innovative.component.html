@@ -1,0 +1,36 @@
+<section id="innovatives" class="innovatives container fixedSpacing">
+  <div class="row">
+    <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
+      <h2 class="vline gradient">{{entry.fields.header}}</h2>
+    </div>
+  </div>
+  <div class="row fixedSpacingHalf" *ngFor="let innovative of entry.fields.innovatives">
+    <div class="col-xs-12 col-sm-10 col-md-10 col-xs-offset-0 col-sm-offset-1">
+      <div class="success-container">
+        <div class="success-logo">
+          <a href="{{innovative.fields.link}}" target="_blank"><img src="{{innovative.fields.logo.fields.file.url}}" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-5 col-md-5 col-xs-offset-0 col-sm-offset-1">
+      <div class="success-container">
+        <div class="success-quote">
+          <div class="quote-bg">
+            <p class="heading-3">{{innovative.fields.quote}}</p>
+            <p class="author">{{innovative.fields.author}}</p>
+            <p class="position">{{innovative.fields.position}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-5 col-md-5">
+      <p>{{innovative.fields.history}}</p>
+    </div>
+  </div>
+  <div class="row innovatives-footer">
+    <div [innerHTML]="entry.fields.footer" class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
+    </div>
+  </div>
+
+
+</section>

@@ -24,6 +24,7 @@ import { HeroComponent } from './ventures/ui/hero/hero.component';
 import { FeatureComponent } from './ventures/ui/feature/feature.component';
 import { PartnerComponent } from './ventures/ui/partner/partner.component';
 import { PerspectiveComponent } from './ventures/ui/perspective/perspective.component';
+import { InnovativeComponent } from './ventures/ui/innovative/innovative.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { PerspectiveComponent } from './ventures/ui/perspective/perspective.comp
     HeroComponent,
     FeatureComponent,
     PartnerComponent,
-    PerspectiveComponent
+    PerspectiveComponent,
+    InnovativeComponent
   ],
   imports: [
     BrowserModule,
