@@ -6,9 +6,11 @@
   </div>
   <div class="perspective-container">
     <div class="row">
-      <div class="col-md-5 col-sm-8 col-sm-offset-2"
-        *ngFor="let perspective of entry.fields.perspectives">
-        <div class="img-gradient img-container tt-leaf no-img">
+      <div [class.col-md-10]="entry.fields.perspectives.length == 1"
+           [class.col-md-5]="entry.fields.perspectives.length == 2"
+           class="col-sm-8 col-sm-offset-2" *ngFor="let perspective of entry.fields.perspectives">
+        <div [class.double]="entry.fields.perspectives.length == 1"
+             class="img-gradient img-container tt-leaf no-img">
           <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
           <div class="tt-content">
             <h5 class="eyebrow">{{perspective.fields.category.fields.title}}</h5>
@@ -20,6 +22,8 @@
               {{perspective.fields.author}}
             </p>
             <p class="article-author">{{perspective.fields.publishDate | date:'MMMM dd, yyyy'}}</p>
+            <p class="article-copy hidden-sm hidden-xs" *ngIf="perspective.fields.previewText && entry.fields.perspectives.length == 1">
+                {{perspective.fields.previewText}}</p>
           </div>
         </div>
       </div>
