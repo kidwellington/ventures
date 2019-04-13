@@ -1,6 +1,9 @@
 @media (min-width: 768px) {
   .adjusted-3-col .col-sm-3 {
-    width: 27%;
+    width: 25%;
+  }
+  .ventures-row > div > div:first-of-type {
+    margin-left: 8.33333333%;
   }
 }
 

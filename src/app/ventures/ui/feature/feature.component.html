@@ -4,19 +4,28 @@
       <h2 class="vline gradient">{{entry.fields.header}}</h2>
     </div>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="entry.fields.description">
     <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 bottom20">
       <p>{{entry.fields.description}}</p>
     </div>
   </div>
   <div id="whatwedo-approach" class="vCarousel-container wwd">
-    <div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
-      <div class="row adjusted-3-col ventures-row" *ngFor="let row of entry.fields.rowData">
+    <div class="row adjusted-3-col ventures-row" *ngFor="let row of entry.fields.rowData">
+      <div *ngIf="row.fields.columnType == 'Fixed'">
         <div class="col-xs-12 col-sm-3 spacing" *ngFor="let item of row.fields.itemData">
           <h4>{{item.fields.header}}</h4>
           <p>{{item.fields.descriptionText}}</p>
         </div>
       </div>
+      <div *ngIf="row.fields.columnType == 'Flex'">
+          <div [class.col-md-5]="row.fields.itemData.length == 2"
+              [class.col-sm-5]="row.fields.itemData.length == 2"
+              [class.col-sm-3]="row.fields.itemData.length == 3"
+          class="col-xs-12 col-sm-10 spacing" *ngFor="let item of row.fields.itemData">
+            <h4>{{item.fields.header}}</h4>
+            <p>{{item.fields.descriptionText}}</p>
+          </div>
+        </div>
     </div>
   </div>
   <div class="row ventures-row-footer" *ngIf="entry.fields.footer">
