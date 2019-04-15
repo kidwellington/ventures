@@ -18,18 +18,22 @@
         </div>
       </div>
       <div *ngIf="row.fields.columnType == 'Flex'">
-          <div [class.col-md-5]="row.fields.itemData.length == 2"
-              [class.col-sm-5]="row.fields.itemData.length == 2"
-              [class.col-sm-3]="row.fields.itemData.length == 3"
-          class="col-xs-12 col-sm-10 spacing" *ngFor="let item of row.fields.itemData">
-            <h4>{{item.fields.header}}</h4>
-            <p>{{item.fields.descriptionText}}</p>
-          </div>
+        <div [class.col-md-5]="row.fields.itemData.length == 2" 
+            [class.col-sm-5]="row.fields.itemData.length == 2"
+            [class.col-sm-3]="row.fields.itemData.length == 3" 
+            class="col-xs-12 col-sm-10 spacing"
+          *ngFor="let item of row.fields.itemData">
+          <h4>{{item.fields.header}}</h4>
+          <p>{{item.fields.descriptionText}}</p>
+          <p *ngIf="item.fields.linkUrl"><a
+              href="{{item.fields.linkUrl}}"
+              class="cta chevron noGrow dark lm" target="_blank">{{item.fields.linkText}}</a></p>
         </div>
+      </div>
     </div>
   </div>
   <div class="row ventures-row-footer" *ngIf="entry.fields.footer">
-    <div [innerHTML]="entry.fields.footer" 
+    <div [innerHTML]="entry.fields.footer"
       class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 fixedSpacingHalf top40 m-topHalf">
     </div>
   </div>
