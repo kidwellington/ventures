@@ -25,6 +25,7 @@ import { FeatureComponent } from './ventures/ui/feature/feature.component';
 import { PartnerComponent } from './ventures/ui/partner/partner.component';
 import { PerspectiveComponent } from './ventures/ui/perspective/perspective.component';
 import { InnovativeComponent } from './ventures/ui/innovative/innovative.component';
+import { CircularComponent } from './ventures/ui/circular/circular.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { InnovativeComponent } from './ventures/ui/innovative/innovative.compone
     FeatureComponent,
     PartnerComponent,
     PerspectiveComponent,
-    InnovativeComponent
+    InnovativeComponent,
+    CircularComponent
   ],
   imports: [
     BrowserModule,
