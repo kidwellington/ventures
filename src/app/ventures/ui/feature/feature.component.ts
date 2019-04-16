@@ -25,8 +25,8 @@ export class FeatureComponent implements OnInit {
     //documentToHtmlString(this.entry.fields);
     this.entry.fields.footer = documentToHtmlString(this.entry.fields.footer);
     console.log("Footer string", this.entry.fields.footer);
-    this.entry.fields.rowData[0].fields.itemData[0].fields.description = documentToHtmlString(this.entry.fields.rowData[0].fields.itemData[0].fields.description);
-    console.log("Description string", this.entry.fields.rowData[0].fields.itemData[0].fields.description);
+    //this.entry.fields.rowData[0].fields.itemData[0].fields.description = documentToHtmlString(this.entry.fields.rowData[0].fields.itemData[0].fields.description);
+    //console.log("Description string", this.entry.fields.rowData[0].fields.itemData[0].fields.description);
 
     
   }
