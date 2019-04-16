@@ -9,8 +9,8 @@ export class ContentfulService {
   public cdaClient = createClient({
     space: environment.contentful.space,
     environment: environment.contentful.environment,
-    accessToken: environment.contentful.deliveryToken,
-    host: environment.contentful.deliveryUrl
+    accessToken: environment.contentful.token,
+    host: environment.contentful.hostUrl
   })
 
   constructor() { }

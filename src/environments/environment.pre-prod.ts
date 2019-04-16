@@ -1,10 +1,11 @@
 export const environment = {
   production: true,
   contentful: {
-    hostUrl: 'cdn.contentful.com',
+    hostUrl: 'preview.contentful.com',
     webappUrl: 'https://app.contentful.com',
     environment: 'ventures-dev',
     space: '',
-    token: ''
+    token: '',
   }
 };
+  

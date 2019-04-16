@@ -5,13 +5,11 @@
 export const environment = {
   production: false,
   contentful: {
-    deliveryUrl: 'cdn.contentful.com',
-    previewUrl: 'preview.contentful.com',
+    hostUrl: 'preview.contentful.com',
     webappUrl: 'https://app.contentful.com',
     environment: 'ventures-dev',
     space: '',
-    deliveryToken: '',
-    previewToken: ''
+    token: ''
   }
 };
 
