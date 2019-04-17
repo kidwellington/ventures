@@ -39,10 +39,10 @@
   <section id="bio-copy" class="member-bio">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 bottom60">
-          <div [innerHTML]="htmlExpertise"></div>
+          <div [innerHTML]="bio.fields.expertise | rtToHtml"></div>
       </div>
       <div class="col-md-8 col-md-offset-2 bottom60 bio">
-          <div [innerHTML]="htmlBio"></div>
+          <div [innerHTML]="bio.fields.bio | rtToHtml"></div>
       </div>
     </div>
   </section>

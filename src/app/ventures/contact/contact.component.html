@@ -14,7 +14,7 @@
           <div class="col-sm-4 col-md-3 m-bottom40" *ngFor="let contact of page.fields.component">
             <div id="location_3" class="location london">
               <h4 class="gradient">{{contact.fields.name}}</h4>
-              <address [innerHTML]="address">
+              <address [innerHTML]="contact.fields.address | rtToHtml">
               </address>
               <a target="_blank" href="#" class="get_dir">Get Directions</a>
             </div>

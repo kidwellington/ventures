@@ -26,6 +26,7 @@ import { PartnerComponent } from './ventures/ui/partner/partner.component';
 import { PerspectiveComponent } from './ventures/ui/perspective/perspective.component';
 import { InnovativeComponent } from './ventures/ui/innovative/innovative.component';
 import { CircularComponent } from './ventures/ui/circular/circular.component';
+import { RtToHtmlPipe } from './pipes/rt-to-html.pipe';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { CircularComponent } from './ventures/ui/circular/circular.component';
     PartnerComponent,
     PerspectiveComponent,
     InnovativeComponent,
-    CircularComponent
+    CircularComponent,
+    RtToHtmlPipe
   ],
   imports: [
     BrowserModule,
