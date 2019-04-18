@@ -1,4 +1,4 @@
-.ventures-feature .ventures-row-footer a, .innovatives-footer a {
+  .ventures-feature .ventures-row-footer a, .innovatives-footer a {
     color: #0076D1;
     background: url(/assets/images/arrow-tip-default.svg) right 3px no-repeat;
     padding-right: 14px;
@@ -6,6 +6,11 @@
     font-size: inherit;
     font-weight: 900;
     font-family: Interstate_Bold,sans-serif,sans-serif;
+  }
+
+  .ventures-row div p a {
+    color: #0076D1;
+    text-decoration: underline;
   }
 
   .ventures-feature .ventures-row-footer a:hover, .innovatives-footer a:hover {

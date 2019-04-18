@@ -14,7 +14,7 @@
       <div *ngIf="row.fields.columnType == 'Fixed'">
         <div class="col-xs-12 col-sm-3 spacing" *ngFor="let item of row.fields.itemData">
           <h4>{{item.fields.header}}</h4>
-          <p [innerHTML]="item.fields.description | rtToHtml"></p>
+          <div [innerHTML]="item.fields.description | rtToHtml"></div>
         </div>
       </div>
       <div *ngIf="row.fields.columnType == 'Flex'">
@@ -24,7 +24,7 @@
             class="col-xs-12 col-sm-10 spacing"
           *ngFor="let item of row.fields.itemData">
           <h4>{{item.fields.header}}</h4>
-          <p [innerHTML]="item.fields.description | rtToHtml"></p>
+          <div [innerHTML]="item.fields.description | rtToHtml"></div>
           <p *ngIf="item.fields.linkUrl"><a
               href="{{item.fields.linkUrl}}"
               class="cta chevron noGrow dark lm" target="_blank">{{item.fields.linkText}}</a></p>

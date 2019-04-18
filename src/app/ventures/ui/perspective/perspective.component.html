@@ -10,8 +10,10 @@
            [class.col-md-5]="entry.fields.perspectives.length == 2"
            class="col-sm-8 col-sm-offset-2" *ngFor="let perspective of entry.fields.perspectives">
         <div [class.double]="entry.fields.perspectives.length == 1"
-             class="img-gradient img-container tt-leaf no-img">
-          <img src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
+            [class.no-img]="!perspective.fields.backgroundImg"
+             class="img-gradient img-container tt-leaf">
+          <img *ngIf="!perspective.fields.backgroundImg" src="/assets/images/home/blank-leaf.png" class="article-bg" alt="" role="presentation">
+          <img *ngIf="perspective.fields.backgroundImg" src="{{perspective.fields.backgroundImg.fields.file.url}}" class="article-bg" alt="" role="presentation">
           <div class="tt-content">
             <h5 class="eyebrow">{{perspective.fields.category.fields.title}}</h5>
             <p class="article-title">
