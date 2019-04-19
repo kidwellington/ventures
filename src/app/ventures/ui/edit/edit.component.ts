@@ -15,13 +15,11 @@ export class EditComponent implements OnInit {
   public domain = environment.contentful.webappUrl;
   public space = environment.contentful.space;
   public environment = environment.contentful.environment;
-  public production = environment.production;
+  public cmsEdit = environment.contentful.cmsEdit;
 
   constructor() { }
 
   ngOnInit() {
-    console.log('Edit button system id is', this.entry.sys.id);
-    console.log('Is this a Prod build?', this.production)
   }
 
 }

@@ -3,8 +3,9 @@ export const environment = {
   contentful: {
     hostUrl: 'cdn.contentful.com',
     webappUrl: 'https://app.contentful.com',
-    environment: 'ventures-dev',
+    environment: '',
     space: '',
-    token: ''
+    token: '',
+    cmsEdit: false
   }
 };
