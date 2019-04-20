@@ -1,5 +1,7 @@
 <p align="center">
+
 ![header](http://citi.com/ventures/images/hero-v-arrow.svg)
+
 </p>
 
 # Ventures
