@@ -1,4 +1,6 @@
-![header](http://citi.com/ventures/images/hero-v-arrow.svg)
+<p align="center">
+  <img src="http://citi.com/ventures/images/hero-v-arrow.svg?raw=true"/>
+</p>
 
 # Ventures
 
