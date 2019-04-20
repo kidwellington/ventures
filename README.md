@@ -1,8 +1,4 @@
-<p align="center">
-
 ![header](http://citi.com/ventures/images/hero-v-arrow.svg)
-
-</p>
 
 # Ventures
 
@@ -74,5 +70,5 @@ export const environment = {
 By default, non-Production configurations include the `<cms-edit>` button to offer a direct link back to Contentful for in-context editing.
 If you dont want this element mucking up your view during development, you can turn this off in `environment.ts` by setting 
 ```js 
-cmsEdit: true
+cmsEdit: false
 ```
