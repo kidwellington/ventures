@@ -67,6 +67,16 @@ export const environment = {
 };
 ```
 
+## Rich Text Parser
+
+Contentful provides a helper function called `documentToHtmlString()` for parsing the response in a Rich Text field. By storing this method as a Pipe, we can easily apply this function on any field that needs to render HTML. Take this example: 
+
+```html 
+<div [innerHTML]="item.fields.description | rtToHtml"></div>
+```
+
+Add the Pipe `rtToHtml` to any element that is expecting a value from a Rich Text field, and your work is done.
+
 ## Edit Button
 
 By default, non-Production configurations include the `<cms-edit>` button to offer a direct link back to Contentful for in-context editing.
