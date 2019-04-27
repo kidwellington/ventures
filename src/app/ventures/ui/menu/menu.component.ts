@@ -9,12 +9,22 @@ import { ContentfulService } from '../../../services/contentful.service';
 })
 export class MenuComponent implements OnInit {
   public header: Entry<any>;
-  public show: boolean = false;
+  public show: boolean;
 
-  constructor(private contentfulService: ContentfulService) { }
+  constructor(private contentfulService: ContentfulService) {
+    this.show = false;
+   }
 
-  toggle() {
+  toggle(event: any) {
     this.show = !this.show;
+    event.stopPropagation();
+  }
+
+  /**
+   * Closes the menu
+   */
+  closeMenu(): void {
+    this.show = false;
   }
 
   ngOnInit() {

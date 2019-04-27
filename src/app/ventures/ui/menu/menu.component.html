@@ -1,5 +1,5 @@
 <!-- NAV 2.0 -->
-<nav aria-label="Citi Ventures" id="header" class="navbar navbar-default navbar-fixed-top" *ngIf="header">
+<nav (click)="closeMenu()" aria-label="Citi Ventures" id="header" class="navbar navbar-default navbar-fixed-top" *ngIf="header">
   <!--cms-edit [entry]="header"></cms-edit--->
   <div class="container">
     <!-- NAV HEADER-->
@@ -23,13 +23,13 @@
       <ul id="menubar1" role="menubar" aria-label="Citi Ventures main navigation" class="nav navbar-nav navbar-right">
         <!-- LI WWD Dropdown -->
         <li class="_dropdown m-wwd" role="none">
-          <a (click)="toggle()" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" class="_dropdown-toggle m-noLink hidden-xs">
+          <a (click)="toggle($event)" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" class="_dropdown-toggle m-noLink hidden-xs">
               {{header.fields.subNavigation.fields.name}} 
           </a>
           <!-- UL WWD -->
           <ul *ngIf="show" role="menu" aria-label="What We Do" class="dropdown-menu desktop-submenu bot-left mobile-desk-dropdown" aria-hidden="true">
             <li role="none" *ngFor="let subLink of header.fields.subNavigation.fields.navLinks">
-              <a role="menuitem" class="{{subLink.fields.linkText=='CUPID' || subLink.fields.linkText=='At-A-Glance' ? 'withMargin noFocusOutline' : ''}}" routerLink="{{subLink.fields.url}}" tabindex="-1">{{subLink.fields.linkText}}</a>
+              <a (click)="toggle($event)" role="menuitem" class="{{subLink.fields.linkText=='CUPID' || subLink.fields.linkText=='At-A-Glance' ? 'withMargin noFocusOutline' : ''}}" routerLink="{{subLink.fields.url}}" tabindex="-1">{{subLink.fields.linkText}}</a>
             </li>        
           </ul>
           <!-- CLOSE UL WWD --> 

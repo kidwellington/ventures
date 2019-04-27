@@ -1,9 +1,9 @@
-<app-menu></app-menu>
+<app-menu #menu></app-menu>
 
-<div id="body">
+<div id="body" (click)="closeMenu()">
 
   <router-outlet></router-outlet>
   
 </div>
 
-<app-footer></app-footer>
+<app-footer (click)="closeMenu()"></app-footer>
