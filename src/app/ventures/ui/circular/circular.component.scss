@@ -1,0 +1,32 @@
+.row-center {
+  text-align: center;
+}
+.col-center {
+	display: inline-block;
+	vertical-align: bottom;
+}
+.col-center.inline {
+	float: none;
+}
+
+@media (min-width: 768px) {
+	.col-center.inline:nth-of-type(3n+1) {
+		margin-left: 6%;
+	}
+	.col-center.inline:nth-of-type(3n+0) {
+		margin-right: 6%;
+	}
+
+	.col-center.inline:last-of-type {
+		margin-right: 6%;
+	}
+	.col-center.offset-big:nth-of-type(even) {
+		padding-top: 110px;
+	}
+	.col-center.offset-small:nth-of-type(even) {
+		padding-top: 54px;
+	}
+	.col-center.offset-small:first-of-type {
+		margin-left: 8.33333333%;
+	}
+}
