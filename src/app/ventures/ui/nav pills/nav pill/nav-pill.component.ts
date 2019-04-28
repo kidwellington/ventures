@@ -23,4 +23,12 @@ export class NavPillComponent implements OnInit {
     toggle() {
         this.isActive = !this.isActive;
     }
+
+    /**
+     * Sets the active status for the nav pill
+     * @param active Boolean designating the status
+     */
+    public setIsActive(active: boolean): void {
+        this.isActive = active;
+    }
 }
