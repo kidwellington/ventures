@@ -1,0 +1,59 @@
+div.tab {
+    float: left;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    text-decoration: none;
+    width: 16.5%;
+    min-height: 65px;
+    padding: 10px 0 0;
+
+    &:hover {
+        font-family: Interstate_Bold, sans-serif;
+        text-decoration: none;
+        color: #000;
+        cursor: pointer;
+
+        .gradient-bar {
+            position: absolute;
+            width: 110%;
+            height: 5px;
+            display: block;
+            top: 60px;
+            left: -5%;
+            background: -moz-linear-gradient(to right, #0556a5 0, #00a56e 100%);
+            background: -webkit-gradient(left, color-stop(0, #0556a5), color-stop(100%, #00a56e));
+            background: -webkit-linear-gradient(left, #0556a5 0, #00a56e 100%);
+            background: -o-linear-gradient(to right, #0556a5 0, #00a56e 100%);
+            background: -ms-linear-gradient(to right, #0556a5 0, #00a56e 100%);
+            background: linear-gradient(to right, #0556a5 0, #00a56e 100%);
+            transform: scale(.8);
+        }
+    }
+
+    &.active {
+        font-family: Interstate_Bold, sans-serif;
+
+        &:hover {
+            -webkit-text-fill-color: #000;
+            color: #000;
+
+            .gradient-bar {
+                display: none;
+            }
+        }
+    }
+
+    .gradient-bar {
+        display: none;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    li.tab {
+        width: 33%;
+    }
+}

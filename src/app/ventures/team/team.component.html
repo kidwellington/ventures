@@ -10,7 +10,9 @@
   <div class="container">
     <div class="row hidden-xs bottom20" id="team-filter-desk">
       <div class="col-sm-12">
-        <ul class="nav nav-pills" role="tablist">
+        <nav-pills [pills]="pills"></nav-pills>
+        <!--
+          <ul class="nav nav-pills" role="tablist">
 
           <li id="tab1" role="tab" class="active tab" tabindex="0" aria-controls="all" aria-selected="true"><span>Full
               Team</span>
@@ -81,9 +83,10 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
+  
 
     <div class="content-team">
       <section id="vi" class="team-browse" name="vi" role="tabpanel" aria-labelledby="tab2" aria-hidden="false"

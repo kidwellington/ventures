@@ -18,6 +18,8 @@ import { ContactComponent } from './ventures/contact/contact.component';
 import { BioComponent } from './ventures/bio/bio.component';
 import { ContentfulService } from './services/contentful.service';
 import { MenuComponent } from './ventures/ui/menu/menu.component';
+import { NavPillsComponent } from './ventures/ui/nav pills/nav-pills.component';
+import { NavPillComponent } from './ventures/ui/nav pills/nav pill/nav-pill.component';
 import { FooterComponent } from './ventures/ui/footer/footer.component';
 import { EditComponent } from './ventures/ui/edit/edit.component';
 import { HeroComponent } from './ventures/ui/hero/hero.component';
@@ -45,6 +47,8 @@ import { RtToHtmlPipe } from './pipes/rt-to-html.pipe';
     ContactComponent,
     BioComponent,
     MenuComponent,
+    NavPillsComponent,
+    NavPillComponent,
     FooterComponent,
     EditComponent,
     HeroComponent,

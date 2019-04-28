@@ -10,8 +10,11 @@ import { ContentfulService } from '../../services/contentful.service';
 export class PerspectivesComponent implements OnInit {
 
   public perspectives: Entry<any>[];
+  public pills: string[];
 
-  constructor(private contentfulService: ContentfulService) { }
+  constructor(private contentfulService: ContentfulService) { 
+    this.pills = ['All Perspectives', 'News', 'Press Releases', 'Videos', 'Opinions'];
+  }
 
   ngOnInit() {
     // get all perspectives

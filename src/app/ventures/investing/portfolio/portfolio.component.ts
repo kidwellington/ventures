@@ -9,8 +9,12 @@ import { ContentfulService } from 'src/app/services/contentful.service';
 })
 export class PortfolioComponent implements OnInit {
   public partners: Entry<any>[];
+  public pills: string[];
 
-  constructor(private contentfulService: ContentfulService) { }
+  constructor(private contentfulService: ContentfulService) {
+    this.pills = ['All Companies', 'Financial Services & Technology', 'Data Analytics & Machine Learning',
+                  'Commerce & Payments', 'Security & Enterprise IT', 'Customer Experience & Marketing'];
+  }
 
   ngOnInit() {
     this.contentfulService.cdaClient.getEntries({
@@ -19,9 +23,6 @@ export class PortfolioComponent implements OnInit {
     }).then(partners => {
       this.partners = partners.items;
       console.log(this.partners)
-
-
     })
   }
-
 }

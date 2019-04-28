@@ -12,8 +12,11 @@ export class TeamComponent implements OnInit {
   public isLoaded : boolean = false;
   public categories: Entry<any>[];
   public biosForCategories: {} = {};
+  public pills: string[];
 
-  constructor(private contentfulService: ContentfulService) { }
+  constructor(private contentfulService: ContentfulService) { 
+    this.pills = ['Full Team', 'Venture Investing', 'D10X', 'Innovation Network & Emerging Technology', 'Studio', 'Finance Operations & Strategy'];
+  }
 
   ngOnInit() {
     // get all bio content items

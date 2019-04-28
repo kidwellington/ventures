@@ -9,7 +9,9 @@
 </main>
 <div class="container portfolio page-portfolio" *ngIf="partners">
   <div class="row">
-    <div class="row hidden-xs bottom20" id="portfolio-filter-desk">
+    <nav-pills [pills]="pills"></nav-pills>
+    <!--
+      <div class="row hidden-xs bottom20" id="portfolio-filter-desk">
       <div class="col-sm-12">
         <ul class="nav nav-pills" role="tablist">
           <li id="tab1" role="presentation" class="active">
@@ -55,7 +57,9 @@
       <div class="col-xs-12 col-sm-12 col-md-12">
         <hr class="green">
       </div>
-    </div>
+    </div>-->
+
+    
     <div class="col-xs-12 col-sm-12 col-md-12 partners-stage" id="company-list">
       <!-- <div class="row">
         <div class="col-sm-2 col-md-2 mobile-menu-filter">
