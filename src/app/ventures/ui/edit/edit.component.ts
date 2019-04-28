@@ -11,15 +11,26 @@ import { Entry } from 'contentful';
 export class EditComponent implements OnInit {
 
   @Input() entry: Entry<any>;
+  @Input() scroll: string;
+
 
   public domain = environment.contentful.webappUrl;
   public space = environment.contentful.space;
   public environment = environment.contentful.environment;
   public cmsEdit = environment.contentful.cmsEdit;
 
-  constructor() { }
+  scrollButton: boolean;
 
-  ngOnInit() {
+  constructor() { 
+    this.scrollButton = false;
   }
 
+  ngOnInit() {
+    if(this.scroll === 'true') {
+      this.scrollButton = true;
+    }
+    else {
+      // do nothing 
+    }
+  }
 }
