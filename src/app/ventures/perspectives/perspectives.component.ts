@@ -13,7 +13,6 @@ export class PerspectivesComponent implements OnInit {
   public pills: string[];
 
   constructor(private contentfulService: ContentfulService) { 
-    this.pills = ['All Perspectives', 'News', 'Press Releases', 'Videos', 'Opinions'];
   }
 
   ngOnInit() {
@@ -24,6 +23,16 @@ export class PerspectivesComponent implements OnInit {
     .then(perspectives => {
       this.perspectives = perspectives;
       console.log(this.perspectives);
+
+      // loop through all perspectives and extract titles and then filter for unique list
+      this.pills = this.perspectives
+      .map((perspective) => {
+        return perspective.fields.category.fields.title;
+      })
+      .filter((perspective, index, self) => {
+        return self.indexOf(perspective) === index;
+      });
+      this.pills.unshift('All Perspectives');
     })
   }
 

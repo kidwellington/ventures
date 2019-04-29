@@ -15,7 +15,6 @@ export class TeamComponent implements OnInit {
   public pills: string[];
 
   constructor(private contentfulService: ContentfulService) { 
-    this.pills = ['Full Team', 'Venture Investing', 'D10X', 'Innovation Network & Emerging Technology', 'Studio', 'Finance Operations & Strategy'];
   }
 
   ngOnInit() {
@@ -32,14 +31,24 @@ export class TeamComponent implements OnInit {
     })
     .then(categories => {
       this.categories = categories;
-      console.log(this.categories)
+      console.log(this.categories);
+
+      // loop through all categories and extract titles and then filter for unique list
+      this.pills = this.categories
+      .map((category) => {
+        return category.fields.title;
+      })
+      .filter((category, index, self) => {
+        return self.indexOf(category) === index;
+      });
+      this.pills.unshift('Full Team');
+
       return Promise.all(this.categories.map(
         category => this.contentfulService.getBios({
           'fields.category.sys.id': category.sys.id,
           order: 'fields.teamRank',
           select: 'sys,fields.category,fields.headshot,fields.name,fields.slug,fields.teamLead,fields.teamRank,fields.title'
         })
-        
       ))
     })
     .then(teamCategories => {
@@ -57,5 +66,4 @@ export class TeamComponent implements OnInit {
 
     
   }
-
 }
