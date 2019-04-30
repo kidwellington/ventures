@@ -45,8 +45,8 @@ ul.nav-pills .tab:hover .gradient-bar,ul.nav-pills a:hover .gradient-bar {
   top:60px;
   left:-5%;
   background:-moz-linear-gradient(to right,#0556a5 0,#00a56e 100%);
-  background:-webkit-gradient(left,color-stop(0,#0556a5),color-stop(100%,#00a56e));
-  background:-webkit-linear-gradient(left,#0556a5 0,#00a56e 100%);
+  background:-webkit-gradient(to left,color-stop(0,#0556a5),color-stop(100%,#00a56e));
+  background:-webkit-linear-gradient(to left,#0556a5 0,#00a56e 100%);
   background:-o-linear-gradient(to right,#0556a5 0,#00a56e 100%);
   background:-ms-linear-gradient(to right,#0556a5 0,#00a56e 100%);
   background:linear-gradient(to right,#0556a5 0,#00a56e 100%);
