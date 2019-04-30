@@ -6,6 +6,15 @@
   float: none;
   vertical-align: bottom;
 }
+.profile-info {
+  margin-top: 20px;
+  height: 150px;
+}
+@media (min-width: 990px) {
+  .profile-info {
+    height: 140px;
+  }
+}
 @media (min-width: 768px) {
   .col-center:nth-of-type(4n+1) {
     margin-left: 6%;
@@ -18,5 +27,8 @@
   }
   .col-center:last-of-type {
     margin-right: 6%;
+  }
+  .profile-info {
+    height: 120px;
   }
 }
