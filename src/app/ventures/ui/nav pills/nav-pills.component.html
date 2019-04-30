@@ -1,7 +1,8 @@
 <div class="row hidden-xs bottom20" id="team-filter-desk">
     <div class="col-sm-12">
       <div class="nav nav-pills" role="tablist">
-        <nav-pill *ngFor="let pill of pills, let i=index" [title]="pill" [index]="i" (click)="pillClick($event)" id="pill{{i}}"></nav-pill>
+        <nav-pill *ngFor="let pill of pills, let i=index" [title]="pill" [index]="i" 
+                  id="pill{{i}}" (pillClicked)="pillClick($event)"></nav-pill>
       </div>
     </div>
   </div>

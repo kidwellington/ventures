@@ -10,20 +10,20 @@
   <div class="container">
     <div class="row hidden-xs bottom20" id="team-filter-desk">
       <div class="col-sm-12">
-        <nav-pills [pills]="pills"></nav-pills>
+        <nav-pills [pills]="pills" (pillClicked)="filterCategories($event)"></nav-pills>
       </div>
     </div>
   
 
     <div class="content-team">
-      <section id="vi" class="team-browse" name="vi" role="tabpanel" aria-labelledby="tab2" aria-hidden="false"
-        *ngFor="let category of categories">
+      <section id="vi" name="vi" role="tabpanel" aria-labelledby="tab2" aria-hidden="false"
+        *ngFor="let category of categories, let i = index" [hidden]="isSectionHidden(i)">
         <div class="row" *ngIf="category.fields.type == 'Team'">
           <div class="team-header col-md-10 col-xs-10 col-md-offset-1 col-xs-offset-1" *ngIf="category.fields.title != 'Team Leader'">
             <h2 class="vline gradient"><span class="">{{category.fields.title}}</span></h2>
           </div>
         </div>
-        <div class="row author-medium row-center">
+        <div class="row author-medium row-center categoryRow">
           <div class="col-xs-6 col-sm-2 team-p col-center"
             *ngFor="let bio of biosForCategories[category.sys.id]; let i = index">
             <cms-edit [entry]="bio"></cms-edit>
