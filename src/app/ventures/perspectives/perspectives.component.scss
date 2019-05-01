@@ -1,38 +1,12 @@
-.nav.nav-pills>li.tab:hover,.nav.nav-pills>li>a:hover {
-  font-family:Interstate_Bold,sans-serif;
+.vPerspectives {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.nav.nav-pills>li>a:hover { 
-  text-decoration:none;
-  color:#000; 
-} 
-ul.nav-pills .tab .gradient-bar,ul.nav-pills a .gradient-bar {
-  display:none;
-  margin-top:10px;
-}
-ul.nav-pills .tab:hover .gradient-bar,ul.nav-pills a:hover .gradient-bar {
-  position:absolute;
-  width:110%;
-  height:5px;
-  display:block;
-  top:60px;
-  left:-5%;
-  background:-moz-linear-gradient(to right,#0556a5 0,#00a56e 100%);
-  background:-webkit-gradient(to left,color-stop(0,#0556a5),color-stop(100%,#00a56e));
-  background:-webkit-linear-gradient(to left,#0556a5 0,#00a56e 100%);
-  background:-o-linear-gradient(to right,#0556a5 0,#00a56e 100%);
-  background:-ms-linear-gradient(to right,#0556a5 0,#00a56e 100%);
-  background:linear-gradient(to right,#0556a5 0,#00a56e 100%);
-  transform:scale(.8)
-}
-ul.nav-pills .active a:hover .gradient-bar,ul.nav-pills .active.tab:hover .gradient-bar {
-  display:none 
-}
-ul.nav-pills.nav>li.active a:hover,ul.nav-pills.nav>li.active:hover {
-  -webkit-text-fill-color:#000;
-  color:#000
-}
-ul.nav-pills .tab {
-  cursor: pointer;
+div.singlePerspective {
+  width: 30%;
+  margin-top: 20px; 
+  padding: 0 30px;
 }
 
 @media (min-width: 768px) {
@@ -40,7 +14,7 @@ ul.nav-pills .tab {
       margin-left: 4%;
       margin-bottom: 40px;
   }
-  .row.vPerspectives > div:nth-child(3n+1) {
+  /*.row.vPerspectives > div:nth-child(3n+1) {
     margin-left: 8.33333333%;
-  }
+  }*/
 }
