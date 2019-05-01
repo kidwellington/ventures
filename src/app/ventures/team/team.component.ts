@@ -99,7 +99,7 @@ export class TeamComponent implements OnInit {
     });
   }
 
-  public filterCategories(pillIndex: any) {
+  public filterCategories(pillIndex: number) {
     this.pillSections[this.selectedCategory] = false;
     this.pillSections[pillIndex] = true;
     this.selectedCategory = pillIndex;

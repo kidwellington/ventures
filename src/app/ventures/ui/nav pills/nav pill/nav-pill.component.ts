@@ -42,6 +42,6 @@ export class NavPillComponent implements OnInit {
      * @param event The click event for the pill
      */
     public pillClick(event: any) {
-        this.pillClicked.emit(event.target.id.replace(/\D/g, ''));
+        this.pillClicked.emit(parseInt(event.target.id.replace(/\D/g, ''), 10));
     }
 }
