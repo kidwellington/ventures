@@ -17,7 +17,7 @@
 
     <div class="content-team">
       <section id="vi" name="vi" role="tabpanel" aria-labelledby="tab2" aria-hidden="false"
-        *ngFor="let category of categories, let i = index" [hidden]="isSectionHidden(i)">
+        *ngFor="let category of categories, let i = index" [@fadeAnimation]="isSectionVisible(i)">
         <div class="row" *ngIf="category.fields.type == 'Team'">
           <div class="team-header col-md-10 col-xs-10 col-md-offset-1 col-xs-offset-1" *ngIf="category.fields.title != 'Team Leader'">
             <h2 class="vline gradient"><span class="">{{category.fields.title}}</span></h2>
