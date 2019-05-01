@@ -1,8 +1,15 @@
 <div class="row adjusted-3-col ventures-row" *ngFor="let row of entry.rowData">
   <div *ngIf="row.fields.columnType == 'Fixed'">
     <div class="col-xs-12 col-sm-3 spacing" *ngFor="let item of row.fields.itemData">
-      <h4>{{item.fields.header}}</h4>
-      <div [innerHTML]="item.fields.description | rtToHtml"></div>
+      <div *ngIf="item.sys.contentType.sys.id === 'featureItem'">
+        <h4>{{item.fields.header}}</h4>
+        <div [innerHTML]="item.fields.description | rtToHtml"></div>
+      </div>
+      <div *ngIf="item.sys.contentType.sys.id === 'innovative'">
+          <h3>{{ item.fields.name }}</h3>
+          <!--insert SINGLE innovative component here-->
+      </div>
+      <!-- continue to insert alternative components to be included within a feature-->
     </div>
   </div>
   <div *ngIf="row.fields.columnType == 'Flex'">
