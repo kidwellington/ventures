@@ -1,4 +1,4 @@
-<div class="row adjusted-3-col ventures-row" *ngFor="let row of entry">
+<div class="row adjusted-3-col ventures-row" *ngFor="let row of entry.rowData">
   <div *ngIf="row.fields.columnType == 'Fixed'">
     <div class="col-xs-12 col-sm-3 spacing" *ngFor="let item of row.fields.itemData">
       <h4>{{item.fields.header}}</h4>
