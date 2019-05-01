@@ -98,7 +98,7 @@
             <div class="no-image article-card img-container" *ngIf="i > 2 || selectedCategory !== 0">
               <cms-edit [entry]="perspective"></cms-edit>
               <div class="vContent">
-                <p class="eyebrow" >{{perspective.fields.category.fields.title}}</p>
+                <p class="eyebrow" [class.hideElement]='selectedCategory !== 0'>{{perspective.fields.category.fields.title}}</p>
                 <p class="article-title">
                   <a href="{{perspective.fields.link}}" target="_blank" class="">{{perspective.fields.title}}</a>
                 </p>
