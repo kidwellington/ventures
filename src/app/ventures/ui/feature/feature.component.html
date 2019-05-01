@@ -10,27 +10,9 @@
     </div>
   </div>
   <div id="whatwedo-approach" class="vCarousel-container wwd">
-    <div class="row adjusted-3-col ventures-row" *ngFor="let row of entry.fields.rowData">
-      <div *ngIf="row.fields.columnType == 'Fixed'">
-        <div class="col-xs-12 col-sm-3 spacing" *ngFor="let item of row.fields.itemData">
-          <h4>{{item.fields.header}}</h4>
-          <div [innerHTML]="item.fields.description | rtToHtml"></div>
-        </div>
-      </div>
-      <div *ngIf="row.fields.columnType == 'Flex'">
-        <div [class.col-md-5]="row.fields.itemData.length == 2" 
-            [class.col-sm-5]="row.fields.itemData.length == 2"
-            [class.col-sm-3]="row.fields.itemData.length == 3" 
-            class="col-xs-12 col-sm-10 spacing"
-          *ngFor="let item of row.fields.itemData">
-          <h4>{{item.fields.header}}</h4>
-          <div [innerHTML]="item.fields.description | rtToHtml"></div>
-          <p *ngIf="item.fields.linkUrl"><a
-              href="{{item.fields.linkUrl}}"
-              class="cta chevron noGrow dark lm" target="_blank">{{item.fields.linkText}}</a></p>
-        </div>
-      </div>
-    </div>
+    <!-- start here -->
+    <app-feature-item [entry]="entry.fields.rowData"></app-feature-item>   
+    <!-- end here -->
   </div>
   <div class="row ventures-row-footer" *ngIf="entry.fields.footer">
     <div [innerHTML]="entry.fields.footer | rtToHtml"
