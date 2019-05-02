@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Entry } from 'contentful';
 import { ContentfulService } from 'src/app/services/contentful.service';
 
+interface PartnerObj {
+  title: string;
+  visible: boolean;
+}
+
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -11,7 +16,7 @@ export class PortfolioComponent implements OnInit {
   public partners: Entry<any>[];
   public selectedCategory: number;
   public pills: string[];
-  public pillSections: boolean[];
+  public pillSections: PartnerObj[];
 
   constructor(private contentfulService: ContentfulService) {
     this.selectedCategory = 0;
@@ -35,23 +40,32 @@ export class PortfolioComponent implements OnInit {
       });
 
       // create the pill Section array
-      this.pillSections = this.pills
-      .map(() => {
-        return false;
+      this.pillSections = this.partners
+      .map((partner) => {
+        return {
+          title: partner.fields.category.fields.title,
+          visible: true
+        }
       });
 
       this.pills.unshift('All Companies');
-      this.pillSections.unshift(true);
     });
   }
 
   public filterCategories(pillIndex: number) {
-    this.pillSections[this.selectedCategory] = false;
-    this.pillSections[pillIndex] = true;
-    this.selectedCategory = pillIndex;
-  }
+    // loop through the pills and check for the old and new index to swap
+    // the visibility
+    for (let i = 0; i < this.pillSections.length; i++) {
+      // true cases - pill index = 0
+      // or the pill clicked matches the title saved for that partner
+      if (pillIndex === 0 || this.pills[pillIndex] === this.pillSections[i].title) {
+        this.pillSections[i].visible = true;
+      }
+      else {
+        this.pillSections[i].visible = false;
+      }
+    }
 
-  public isSectionVisible(sectionIndex: number) {
-    return this.pillSections[sectionIndex] || this.pillSections[0];
+    this.selectedCategory = pillIndex;
   }
 }

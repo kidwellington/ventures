@@ -14,7 +14,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12 partners-stage" id="company-list">
       <div class="row" id="current-company-list">
           <div class="col-xs-6 col-sm-2 col-md-2 all-partners mce-partners" *ngFor="let partner of partners, let i = index"
-              [class.hideElement]="!isSectionVisible(i)">
+              [class.hideElement]="!pillSections[i].visible">
               <app-partner [entry]="partner"></app-partner>
           </div>
         </div>
