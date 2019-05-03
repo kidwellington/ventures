@@ -1,28 +1,24 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnDestroy } from '@angular/core';
+import { Subscription, Observable, fromEvent } from 'rxjs';
+
 
 @Component({
     selector: 'nav-pill',
     templateUrl: './nav-pill.component.html',
     styleUrls: ['./nav-pill.component.scss']
 })
-export class NavPillComponent implements OnInit {
+export class NavPillComponent implements OnInit, OnDestroy {
     @Input() title: string;
     @Input() index: number;
     @Input() isLarge: string;
     @Output() pillClicked: EventEmitter<number>;
     isActive: boolean;
     isLargeScreen: boolean;
+    private resizeObservable: Observable<Event>;
+    private resizeSubscription: Subscription;
 
     constructor() {
         this.pillClicked = new EventEmitter();
-
-        // check value of isLarge
-        if (this.isLarge === undefined) {
-            this.isLargeScreen = false;
-        }
-        else {
-            this.isLargeScreen = this.isLarge === 'true';
-        }
     }
 
     ngOnInit() {
@@ -33,6 +29,20 @@ export class NavPillComponent implements OnInit {
         else {
             this.isActive = false;
         }
+
+        // check value of isLarge on load
+        if (this.isLarge === undefined) {
+            this.isLargeScreen = false;
+        }
+        else {
+            this.isLargeScreen = this.isLarge === 'true';
+        }
+
+        // track the isLargeScreen value through observable
+        this.resizeObservable = fromEvent(window, 'resize');
+        this.resizeSubscription = this.resizeObservable.subscribe(evt => {
+            console.log('event: ', evt);
+        });
     }
 
     public toggle(): void {
@@ -53,5 +63,9 @@ export class NavPillComponent implements OnInit {
      */
     public pillClick(event: any) {
         this.pillClicked.emit(parseInt(event.target.id.replace(/\D/g, ''), 10));
+    }
+
+    ngOnDestroy() {
+        this.resizeSubscription.unsubscribe();
     }
 }
