@@ -9,35 +9,15 @@
 </main>
 <div class="container portfolio page-portfolio" *ngIf="partners">
   <div class="row">
-    <nav-pills [pills]="pills"></nav-pills>
+    <nav-pills [pills]="pills" (pillClicked)="filterCategories($event)"></nav-pills>
     
     <div class="col-xs-12 col-sm-12 col-md-12 partners-stage" id="company-list">
-      <!-- <div class="row">
-        <div class="col-sm-2 col-md-2 mobile-menu-filter">
-          <h6>Filter by Focus Area</h6>
-          <p class="focus-area-filter" role="button" tabindex="0">All</p>
-          <div class="focus-area-overlay">
-            <img class="close-overlay" src="/assets/images/x-dark.png" alt="close filter">
-            <div class="row">
-              <ul class="col-xs-11 col-xs-offset-1 overlay-sub-menu" role="menu">
-                <li class="filter-header">
-                  <h6>Filter by Focus Area</h6>
-                </li>
-                <li><a href="javascript:void(0)" class="show-all active" role="menuitem">All Companies</a></li>
-                <li><a href="javascript:void(0)" class="show-fst" role="menuitem">Financial Services &amp; Technology
-                  </a></li>
-                <li><a href="javascript:void(0)" class="show-daml" role="menuitem">Data Analytics &amp; Machine
-                    Learning</a></li>
-                <li><a href="javascript:void(0)" class="show-cp" role="menuitem">Commerce &amp; Payments</a></li>
-                <li><a href="javascript:void(0)" class="show-seit" role="menuitem">Security &amp; Enterprise IT</a></li>
-                <li><a href="javascript:void(0)" class="show-mce" role="menuitem">Customer Experience &amp;
-                    Marketing</a></li>
-              </ul>
-            </div>
+      <div class="row" id="current-company-list">
+          <div class="col-xs-6 col-sm-2 col-md-2 all-partners mce-partners" *ngFor="let partner of partners, let i = index"
+              [class.hideElement]="!pillSections[i].visible">
+              <app-partner [entry]="partner"></app-partner>
           </div>
         </div>
-      </div> -->
-      <app-partner [entry]="partners"></app-partner>
-    </div>
+    </div>    
   </div>
 </div>

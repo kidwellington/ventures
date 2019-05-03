@@ -1,11 +1,9 @@
-<div class="row" id="current-company-list">
-  <div class="col-xs-6 col-sm-2 col-md-2 all-partners mce-partners" *ngFor="let partner of entry">
-    <cms-edit [entry]="partner"></cms-edit>
-    <div class="partner-over docusign in-middle">
-      <a href="{{partner.fields.link}}" class="partner-logo-cta" target="_blank">
-        <img src="{{partner.fields.logo.fields.file.url}}" alt="DocuSign logo">
-      </a>
-      <p class="discover" *ngIf="partner.fields.additionalInfo">{{partner.fields.additionalInfo}}</p>
-    </div>
+<div class="partnerContainer">
+  <cms-edit [entry]="entry"></cms-edit>
+  <div class="partner-over docusign in-middle">
+    <a href="{{entry.fields.link}}" class="partner-logo-cta" target="_blank">
+      <img src="{{entry.fields.logo.fields.file.url}}" alt="DocuSign logo">
+    </a>
+    <p class="discover" *ngIf="entry.fields.additionalInfo">{{entry.fields.additionalInfo}}</p>
   </div>
 </div>

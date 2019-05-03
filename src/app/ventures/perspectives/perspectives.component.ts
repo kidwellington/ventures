@@ -1,18 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { Entry } from 'contentful';
 import { ContentfulService } from '../../services/contentful.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-perspectives',
   templateUrl: './perspectives.component.html',
-  styleUrls: ['./perspectives.component.scss']
+  styleUrls: ['./perspectives.component.scss'],
+  animations: [
+    trigger('fadeAnimation', [
+      state('visible', style({
+        opacity: 1
+      })),
+      state('invisible', style({
+        opacity: 0,
+        height: 0,
+        visibility: 'hidden',
+        margin: 0,
+        padding: 0,
+        border: 0,
+        overflow: 'hidden',
+        display: 'none'
+      })),
+      transition('visible=>invisible', animate('0ms')),
+      transition('invisible=>visible', animate('0ms'))
+    ]),
+  ]
 })
 export class PerspectivesComponent implements OnInit {
 
   public perspectives: Entry<any>[];
+  public selectedCategory: number;
   public pills: string[];
 
-  constructor(private contentfulService: ContentfulService) { 
+  constructor(private contentfulService: ContentfulService) {
+    this.selectedCategory = 0;
+
   }
 
   ngOnInit() {
@@ -32,8 +55,20 @@ export class PerspectivesComponent implements OnInit {
       .filter((perspective, index, self) => {
         return self.indexOf(perspective) === index;
       });
+
       this.pills.unshift('All Perspectives');
-    })
+    });
+  }
+
+  public filterCategories(pillIndex: number) {
+    this.selectedCategory = pillIndex;
+  }
+
+  public isSectionVisible(index: number) {
+    const isVisibleFlag = !(this.perspectives[index].fields.category.fields.title !== this.pills[this.selectedCategory] &&
+                          this.selectedCategory !== 0);
+
+    return isVisibleFlag ? 'visible' : 'invisible';
   }
 
 }

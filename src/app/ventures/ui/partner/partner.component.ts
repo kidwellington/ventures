@@ -7,13 +7,12 @@ import { Entry } from 'contentful';
   styleUrls: ['./partner.component.scss']
 })
 export class PartnerComponent implements OnInit {
-
-  @Input() entry: Entry<any>[];
+  @Input() entry: Entry<any>;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.entry)
+    console.log(this.entry);
   }
 
 }

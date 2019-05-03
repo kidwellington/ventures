@@ -21,22 +21,13 @@
 
   <section id="perspectives-filter" class="fixedSpacingHalf">
     <div class="container">
-      <nav-pills [pills]="pills"></nav-pills>
+      <nav-pills [pills]="pills" (pillClicked)="filterCategories($event)"></nav-pills>
     </div>
   </section>
 
   <!--  END FILTER  -->
 
-  <section id="all" class="team-browse" name="all" role="tabpanel" aria-labelledby="tab1" aria-hidden="false"></section>
-  <section id="News" class="team-browse" name="news" role="tabpanel" aria-labelledby="tab2" aria-hidden="true">
-  </section>
-  <section id="PR" class="team-browse" name="pr" role="tabpanel" aria-labelledby="tab3" aria-hidden="true"></section>
-  <section id="Video" class="team-browse" name="video" role="tabpanel" aria-labelledby="tab4" aria-hidden="true">
-  </section>
-  <section id="Opinion" class="team-browse" name="opinion" role="tabpanel" aria-labelledby="tab5" aria-hidden="true">
-  </section>
-
-  <section id="perspectives" class="container fixedSpacingHalf">
+  <section id="perspectives" class="container fixedSpacingHalf" [class.hideElement]='selectedCategory !== 0'>
       <div class="perspective-container bottom40 m-bottom0">
         <div class="row">
           <div id="featured-main" class="col-md-10 col-sm-8 col-md-offset-1 col-sm-offset-2">
@@ -97,16 +88,17 @@
       </div>
   </section>
 
-
   <div class="container">
     <section id="perspectives-articles">
       <div id="perspectives-articles-main" class="fixedSpacingHalf">
         <div class="row vPerspectives top40">
-          <div class="col-xs-12 col-sm-3 col-sm-offset-040" *ngFor="let perspective of perspectives; let i = index">
-            <div class="no-image article-card img-container" *ngIf="i > 2">
+          <!--Removed classes col-xs-12 col-sm-3 col-sm-offset-040-->
+          <div class="singlePerspective" *ngFor="let perspective of perspectives; let i = index" [@fadeAnimation]="isSectionVisible(i)">
+            <!--[class.hideElement]='perspectives[i].fields.category.fields.title !== pills[selectedCategory] && selectedCategory !== 0'>-->
+            <div class="no-image article-card img-container" *ngIf="i > 2 || selectedCategory !== 0">
               <cms-edit [entry]="perspective"></cms-edit>
               <div class="vContent">
-                <p class="eyebrow">{{perspective.fields.category.fields.title}}</p>
+                <p class="eyebrow" [class.hideElement]='selectedCategory !== 0'>{{perspective.fields.category.fields.title}}</p>
                 <p class="article-title">
                   <a href="{{perspective.fields.link}}" target="_blank" class="">{{perspective.fields.title}}</a>
                 </p>

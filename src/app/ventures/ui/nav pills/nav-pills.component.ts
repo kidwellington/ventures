@@ -10,8 +10,11 @@ export class NavPillsComponent {
     @Input() pills: string[];
     @Output() pillClicked: EventEmitter<number>;
     private activeIndex: number;
+    isLargeScreen: boolean;
+    isOverlayOpen: boolean;
 
-    @ViewChildren(NavPillComponent) pillComponents: QueryList<NavPillComponent>;
+    @ViewChildren('deskPills') deskPillComponents: QueryList<NavPillComponent>;
+    @ViewChildren('mobilePills') mobilePillComponents: QueryList<NavPillComponent>;
 
     constructor() {
         this.activeIndex = 0;
@@ -23,16 +26,30 @@ export class NavPillsComponent {
      * @param pillIndex The index of the pill that was clicked
      */
     pillClick(pillIndex: number) {
+        // close overlay in case it is open
+        this.closeOverlay();
+
         if (pillIndex === this.activeIndex) {
             // do nothing, active pill clicked
         }
         else {
-            // alter the active state for both the old and new pills
-            const pillArray = this.pillComponents.toArray();
-            pillArray[this.activeIndex].setIsActive(false);
-            pillArray[pillIndex].setIsActive(true);
+            // alter the active state for both the old and new pills in both desktop and mobile versions
+            const deskArray = this.deskPillComponents.toArray();
+            const mobileArray = this.mobilePillComponents.toArray();
+            deskArray[this.activeIndex].setIsActive(false);
+            deskArray[pillIndex].setIsActive(true);
+            mobileArray[this.activeIndex].setIsActive(false);
+            mobileArray[pillIndex].setIsActive(true);
             this.activeIndex = pillIndex;
             this.pillClicked.emit(pillIndex);
         }
+    }
+
+    openOverlay() {
+        this.isOverlayOpen = true;
+    }
+
+    closeOverlay() {
+        this.isOverlayOpen = false;
     }
 }

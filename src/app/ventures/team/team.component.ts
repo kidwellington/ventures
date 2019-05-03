@@ -2,11 +2,30 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Entry } from 'contentful';
 import { ContentfulService } from '../../services/contentful.service';
 import { NavPillsComponent } from '../ui/nav pills/nav-pills.component';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
-  styleUrls: ['./team.component.scss']
+  styleUrls: ['./team.component.scss'],
+  animations: [
+    trigger('fadeAnimation', [
+      state('visible', style({
+        opacity: 1
+      })),
+      state('invisible', style({
+        opacity: 0,
+        height: 0,
+        visibility: 'hidden',
+        margin: 0,
+        padding: 0,
+        border: 0,
+        overflow: 'hidden'
+      })),
+      transition('visible=>invisible', animate('500ms')),
+      transition('invisible=>visible', animate('500ms'))
+    ]),
+  ]
 })
 export class TeamComponent implements OnInit {
   public bios: Entry<any>[];
@@ -80,13 +99,15 @@ export class TeamComponent implements OnInit {
     });
   }
 
-  public filterCategories(pillIndex: any) {
+  public filterCategories(pillIndex: number) {
     this.pillSections[this.selectedCategory] = false;
     this.pillSections[pillIndex] = true;
     this.selectedCategory = pillIndex;
   }
 
-  public isSectionHidden(sectionIndex: number) {
-    return !(this.pillSections[sectionIndex] || this.pillSections[0]);
+  public isSectionVisible(sectionIndex: number) {
+    const isVisibleFlag = this.pillSections[sectionIndex] || this.pillSections[0];
+
+    return isVisibleFlag ? 'visible' : 'invisible';
   }
 }
