@@ -8,11 +8,21 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class NavPillComponent implements OnInit {
     @Input() title: string;
     @Input() index: number;
+    @Input() isLarge: string;
     @Output() pillClicked: EventEmitter<number>;
     isActive: boolean;
+    isLargeScreen: boolean;
 
     constructor() {
         this.pillClicked = new EventEmitter();
+
+        // check value of isLarge
+        if (this.isLarge === undefined) {
+            this.isLargeScreen = false;
+        }
+        else {
+            this.isLargeScreen = this.isLarge === 'true';
+        }
     }
 
     ngOnInit() {

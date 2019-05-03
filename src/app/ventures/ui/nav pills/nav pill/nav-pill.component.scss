@@ -51,6 +51,28 @@ div.tab {
     }
 }
 
+.mobilePill {
+    margin-bottom: 0;
+    font-family: Interstate_Regular,sans-serif,sans-serif;
+    color: #000;
+    padding: 16px 0 16px 55px;
+    line-height: 20px;
+    display: block;
+
+    &:hover {
+        cursor: pointer;
+        background: #eee;
+    }
+
+    &.active {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
 @media (max-width: 1024px) {
     li.tab {
         width: 33%;

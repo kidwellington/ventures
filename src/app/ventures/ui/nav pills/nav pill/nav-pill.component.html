@@ -1,5 +1,8 @@
-<div role="tab" class="tab" aria-controls="all" id="tab{{ index }}" role="tab" class="tab" [attr.aria-selected]="isActive"
+<div *ngIf="isLargeScreen" role="tab" class="tab" aria-controls="all" id="tab{{ index }}" role="tab" class="tab" [attr.aria-selected]="isActive"
     [class.active]="isActive" (click)="pillClick($event)">
     <span [innerHTML]="title" id="tabTitle{{ index }}"></span>
     <div class="gradient-bar hidden-xs"></div>
 </div>
+
+<a *ngIf="!isLargeScreen" role="menuitem" class="mobilePill" [class.active]="isActive"
+    [attr.aria-selected]="isActive" (click)="pillClick($event)" id="mobileTabTitle{{ index }}">{{title}}</a>
