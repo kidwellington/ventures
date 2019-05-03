@@ -32,3 +32,9 @@
     height: 120px;
   }
 }
+
+@media (max-width: 767px) {
+  .team-p {
+    padding: 0 50px;
+  }
+}
