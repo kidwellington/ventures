@@ -22,8 +22,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         overflow: 'hidden',
         display: 'none'
       })),
-      transition('visible=>invisible', animate('500ms')),
-      transition('invisible=>visible', animate('500ms'))
+      transition('visible=>invisible', animate('0ms')),
+      transition('invisible=>visible', animate('0ms'))
     ]),
   ]
 })
