@@ -1,4 +1,4 @@
-<section id="approach" class="approach container fixedSpacing ventures-feature">
+<section id="approach" class="container fixedSpacing ventures-feature">
   <div class="row">
     <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
       <h2 class="vline gradient">{{entry.fields.header}}</h2>
@@ -25,7 +25,7 @@
           </div>
           <!-- Innovative -->
           <div *ngIf="item.sys.contentType.sys.id === 'innovative'">
-            <div class="col-xs-12 col-sm-10 col-md-10 col-xs-offset-0 col-sm-offset-1">
+            <div class="col-xs-12 col-sm-10 col-md-10 col-xs-offset-0">
               <div class="success-container">
                 <div class="success-logo">
                   <a href="{{item.fields.link}}" target="_blank"><img src="{{item.fields.logo.fields.file.url}}"
@@ -33,7 +33,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-5 col-md-5 col-xs-offset-0 col-sm-offset-1">
+            <div class="col-xs-12 col-sm-5 col-md-5 col-xs-offset-0">
               <div class="success-container">
                 <div class="success-quote">
                   <div class="quote-bg">
@@ -44,14 +44,14 @@
                 </div>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-5 col-md-5">
+            <div class="col-xs-12 col-sm-6 col-md-6">
               <p>{{item.fields.history}}</p>
             </div>
           </div>
           <!-- Perspective -->
           <div *ngIf="item.sys.contentType.sys.id === 'perspective'">
             <div [class.col-md-10]="row.fields.itemData.length == 1" [class.col-md-5]="row.fields.itemData.length == 2"
-              class="col-sm-8 col-sm-offset-2">
+              class="col-sm-8">
               <div [class.double]="row.fields.itemData.length == 1" [class.no-img]="!item.fields.backgroundImg"
                 class="img-gradient img-container tt-leaf">
                 <img *ngIf="!item.fields.backgroundImg" src="/assets/images/home/blank-leaf.png" class="article-bg"
@@ -76,7 +76,7 @@
             </div>
           </div>
           <!-- Circular -->
-          <div *ngIf="item.sys.contentType.sys.id === 'circular'">
+          <div class="row-center" *ngIf="item.sys.contentType.sys.id === 'circular'">
             <div [class.col-md-4]="row.fields.itemData.length == 3"
               [class.col-sm-4]="row.fields.itemData.length == 3"
               [class.offset-big]="row.fields.itemData.length == 3"
