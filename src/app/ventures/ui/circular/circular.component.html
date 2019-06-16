@@ -1,33 +1,14 @@
-<section id="approach" class="approach container fixedSpacing ventures-feature">
-	<div class="row">
-		<div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
-			<h2 class="vline gradient">{{entry.fields.header}}</h2>
+<div [class.col-md-4]="parentEntry.length == 3" [class.col-sm-4]="parentEntry.length == 3"
+	[class.offset-big]="parentEntry.length == 3" [class.col-md-5]="parentEntry.length == 2"
+	[class.col-sm-5]="parentEntry.length == 2" [class.inline]="parentEntry.length == 2"
+	[class.col-xs-12]="parentEntry.length <= 3" [class.col-xs-6]="parentEntry.length >= 4"
+	[class.col-md-2]="parentEntry.length >= 4" [class.col-sm-2]="parentEntry.length >= 4"
+	[class.offset-small]="parentEntry.length >= 4" class="col-center">
+	<div class="img-gradient circular img-container no-logo nolink">
+		<img src="{{entry.fields.backgroundImg.fields.file.url}}" class="spotlight-bg" alt="">
+		<div class="vContent in-middle">
+			<p *ngIf="entry.fields.header" class="eyebrow asHeader lh30">{{entry.fields.header}}</p>
+			<p>{{entry.fields.description}}</p>
 		</div>
 	</div>
-
-	<div class="vCarousel-container fixedSpacingHalf">
-		<!-- Two Circulars -->
-		<div class="row vCarousel row-center">
-			<div [class.col-md-4]="entry.fields.circulars.length == 3"
-					 [class.col-sm-4]="entry.fields.circulars.length == 3"
-					 [class.offset-big]="entry.fields.circulars.length == 3"
-					 [class.col-md-5]="entry.fields.circulars.length == 2"
-					 [class.col-sm-5]="entry.fields.circulars.length == 2"
-					 [class.inline]="entry.fields.circulars.length == 2"
-					 [class.col-xs-12]="entry.fields.circulars.length <= 3"
-					 [class.col-xs-6]="entry.fields.circulars.length >= 4"
-					 [class.col-md-2]="entry.fields.circulars.length >= 4"
-					 [class.col-sm-2]="entry.fields.circulars.length >= 4"
-					 [class.offset-small]="entry.fields.circulars.length >= 4"
-			class="col-center" *ngFor="let circular of entry.fields.circulars">
-				<div class="img-gradient circular img-container no-logo nolink">
-					<img src="{{circular.fields.backgroundImg.fields.file.url}}" class="spotlight-bg" alt="">
-					<div class="vContent in-middle">
-						<p *ngIf="circular.fields.header" class="eyebrow asHeader lh30">{{circular.fields.header}}</p>
-						<p>{{circular.fields.description}}</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+</div>

@@ -16,7 +16,7 @@ export class InvestingComponent implements OnInit {
     this.contentfulService.cdaClient.getEntries({
       content_type: 'page',
       'sys.id': '7tSaoV4RtIUJuLRhqrVzrm',
-      include: 3
+      include: 4
     }).then(page => {
       this.page = page.items[0];
       console.log(this.page);

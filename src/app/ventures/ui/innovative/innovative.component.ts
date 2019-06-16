@@ -14,8 +14,8 @@ export class InnovativeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.entry.fields)
-    this.entry.fields.footer = documentToHtmlString(this.entry.fields.footer);
+    //console.log(this.entry)
+    //this.entry.fields.footer = documentToHtmlString(this.entry.fields.footer);
   }
 
 }

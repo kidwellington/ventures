@@ -9,11 +9,12 @@ import { Entry } from 'contentful';
 export class PerspectiveComponent implements OnInit {
 
   @Input() entry: Entry<any>;
+  @Input() parentEntry: Entry<any>;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.entry.fields)
+    //console.log(this.entry.fields)
   }
 
 }

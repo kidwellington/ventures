@@ -30,6 +30,7 @@ import { PerspectiveComponent } from './ventures/ui/perspective/perspective.comp
 import { InnovativeComponent } from './ventures/ui/innovative/innovative.component';
 import { CircularComponent } from './ventures/ui/circular/circular.component';
 import { RtToHtmlPipe } from './pipes/rt-to-html.pipe';
+import { FeatureItemComponent } from './ventures/ui/feature-item/feature-item.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { RtToHtmlPipe } from './pipes/rt-to-html.pipe';
     PerspectiveComponent,
     InnovativeComponent,
     CircularComponent,
-    RtToHtmlPipe
+    RtToHtmlPipe,
+    FeatureItemComponent
   ],
   imports: [
     BrowserModule,

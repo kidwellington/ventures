@@ -1,4 +1,4 @@
-<section id="approach" class="approach container fixedSpacing ventures-feature">
+<section id="approach" class="container fixedSpacing ventures-feature">
   <div class="row">
     <div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
       <h2 class="vline gradient">{{entry.fields.header}}</h2>
@@ -10,27 +10,50 @@
     </div>
   </div>
   <div id="whatwedo-approach" class="vCarousel-container wwd">
+    <!-- start here -->
+    <!-- <app-feature-item [entry]="entry.fields"></app-feature-item>    -->
     <div class="row adjusted-3-col ventures-row" *ngFor="let row of entry.fields.rowData">
       <div *ngIf="row.fields.columnType == 'Fixed'">
-        <div class="col-xs-12 col-sm-3 spacing" *ngFor="let item of row.fields.itemData">
-          <h4>{{item.fields.header}}</h4>
-          <div [innerHTML]="item.fields.description | rtToHtml"></div>
+        <div *ngFor="let item of row.fields.itemData">
+          <!-- TODO: Use component selectors here instead of including all the HTML for each here individually between the *ngIf contentType check -->
+          <!-- Copy Block -->
+          <div *ngIf="item.sys.contentType.sys.id === 'featureItem'">
+            <div class="col-xs-12 col-sm-3 spacing">
+              <h4>{{item.fields.header}}</h4>
+              <div [innerHTML]="item.fields.description | rtToHtml"></div>
+            </div>
+          </div>
+          <!-- Innovative -->
+          <div *ngIf="item.sys.contentType.sys.id === 'innovative'">
+            <app-innovative [entry]="item"></app-innovative>
+          </div>
+          <!-- Perspective -->
+          <div *ngIf="item.sys.contentType.sys.id === 'perspective'">
+            <app-perspective [parentEntry]="row.fields.itemData" [entry]="item"></app-perspective>
+          </div>
+          <!-- Circular -->
+          <div *ngIf="item.sys.contentType.sys.id === 'circular'">
+            <app-circular [parentEntry]="row.fields.itemData" [entry]="item"></app-circular>
+          </div>
         </div>
       </div>
+
       <div *ngIf="row.fields.columnType == 'Flex'">
-        <div [class.col-md-5]="row.fields.itemData.length == 2" 
-            [class.col-sm-5]="row.fields.itemData.length == 2"
-            [class.col-sm-3]="row.fields.itemData.length == 3" 
-            class="col-xs-12 col-sm-10 spacing"
-          *ngFor="let item of row.fields.itemData">
-          <h4>{{item.fields.header}}</h4>
-          <div [innerHTML]="item.fields.description | rtToHtml"></div>
-          <p *ngIf="item.fields.linkUrl"><a
-              href="{{item.fields.linkUrl}}"
-              class="cta chevron noGrow dark lm" target="_blank">{{item.fields.linkText}}</a></p>
+        <div *ngFor="let item of row.fields.itemData">
+          <div *ngIf="item.sys.contentType.sys.id === 'featureItem'">
+            <div [class.col-md-5]="row.fields.itemData.length == 2" [class.col-sm-5]="row.fields.itemData.length == 2"
+              [class.col-sm-3]="row.fields.itemData.length == 3" class="col-xs-12 col-sm-10 spacing">
+              <h4>{{item.fields.header}}</h4>
+              <div [innerHTML]="item.fields.description | rtToHtml"></div>
+              <p *ngIf="item.fields.linkUrl"><a href="{{item.fields.linkUrl}}" class="cta chevron noGrow dark lm"
+                  target="_blank">{{item.fields.linkText}}</a></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- end here -->
   </div>
   <div class="row ventures-row-footer" *ngIf="entry.fields.footer">
     <div [innerHTML]="entry.fields.footer | rtToHtml"
