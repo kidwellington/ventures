@@ -9,6 +9,7 @@ import { Entry } from 'contentful';
 export class CircularComponent implements OnInit {
 
   @Input() entry: Entry<any>;
+  @Input() parentEntry: Entry<any>;
 
   constructor() { }
 

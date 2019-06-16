@@ -25,76 +25,15 @@
           </div>
           <!-- Innovative -->
           <div *ngIf="item.sys.contentType.sys.id === 'innovative'">
-            <div class="col-xs-12 col-sm-10 col-md-10 col-xs-offset-0 col-sm-offset-1">
-              <div class="success-container">
-                <div class="success-logo">
-                  <a href="{{item.fields.link}}" target="_blank"><img src="{{item.fields.logo.fields.file.url}}"
-                      alt=""></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-5 col-md-5 col-xs-offset-0 col-sm-offset-1">
-              <div class="success-container">
-                <div class="success-quote">
-                  <div class="quote-bg">
-                    <p class="heading-3">{{item.fields.quote}}</p>
-                    <p class="author">{{item.fields.author}}</p>
-                    <p class="position">{{item.fields.position}}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-5 col-md-5">
-              <p>{{item.fields.history}}</p>
-            </div>
+            <app-innovative [entry]="item"></app-innovative>
           </div>
           <!-- Perspective -->
           <div *ngIf="item.sys.contentType.sys.id === 'perspective'">
-            <div [class.col-md-10]="row.fields.itemData.length == 1" [class.col-md-5]="row.fields.itemData.length == 2"
-              class="col-sm-8 col-sm-offset-2">
-              <div [class.double]="row.fields.itemData.length == 1" [class.no-img]="!item.fields.backgroundImg"
-                class="img-gradient img-container tt-leaf">
-                <img *ngIf="!item.fields.backgroundImg" src="/assets/images/home/blank-leaf.png" class="article-bg"
-                  alt="" role="presentation">
-                <img *ngIf="item.fields.backgroundImg" src="{{item.fields.backgroundImg.fields.file.url}}"
-                  class="article-bg" alt="" role="presentation">
-                <div class="tt-content">
-                  <h5 class="eyebrow">{{item.fields.category.fields.title}}</h5>
-                  <p class="article-title">
-                    <a href="{{item.fields.link}}" target="_blank" class="">{{item.fields.title}}</a>
-                  </p>
-                  <p class="article-meta">{{item.fields.publication}}
-                    <span *ngIf="item.fields.author"> ● </span>
-                    {{item.fields.author}}
-                  </p>
-                  <p class="article-author">{{item.fields.publishDate | date:'MMMM dd, yyyy'}}</p>
-                  <p class="article-copy hidden-sm hidden-xs"
-                    *ngIf="item.fields.previewText && row.fields.itemData.length == 1">
-                    {{item.fields.previewText}}</p>
-                </div>
-              </div>
-            </div>
+            <app-perspective [parentEntry]="row.fields.itemData" [entry]="item"></app-perspective>
           </div>
           <!-- Circular -->
           <div *ngIf="item.sys.contentType.sys.id === 'circular'">
-            <div [class.col-md-4]="row.fields.itemData.length == 3"
-              [class.col-sm-4]="row.fields.itemData.length == 3"
-              [class.offset-big]="row.fields.itemData.length == 3"
-              [class.col-md-5]="row.fields.itemData.length == 2"
-              [class.col-sm-5]="row.fields.itemData.length == 2" [class.inline]="row.fields.itemData.length == 2"
-              [class.col-xs-12]="row.fields.itemData.length <= 3"
-              [class.col-xs-6]="row.fields.itemData.length >= 4"
-              [class.col-md-2]="row.fields.itemData.length >= 4"
-              [class.col-sm-2]="row.fields.itemData.length >= 4"
-              [class.offset-small]="row.fields.itemData.length >= 4" class="col-center">
-              <div class="img-gradient circular img-container no-logo nolink">
-                <img src="{{item.fields.backgroundImg.fields.file.url}}" class="spotlight-bg" alt="">
-                <div class="vContent in-middle">
-                  <p *ngIf="item.fields.header" class="eyebrow asHeader lh30">{{item.fields.header}}</p>
-                  <p>{{item.fields.description}}</p>
-                </div>
-              </div>
-            </div>
+            <app-circular [parentEntry]="row.fields.itemData" [entry]="item"></app-circular>
           </div>
         </div>
       </div>
@@ -110,16 +49,6 @@
                   target="_blank">{{item.fields.linkText}}</a></p>
             </div>
           </div>
-        </div>
-
-      </div>
-
-      <div *ngFor="let item of row.fields.itemData">
-        <div *ngIf="item.sys.contentType.sys.id === 'featureItem'">
-
-        </div>
-        <div *ngIf="item.sys.contentType.sys.id === 'innovative'">
-
         </div>
       </div>
     </div>
