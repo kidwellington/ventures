@@ -11,7 +11,7 @@
       <nav-pills [pills]="pills" (pillClicked)="filterCategories($event)"></nav-pills>
   </div>
   
-  <div class="content-team">
+  <div class="content-team container">
     <section id="vi" name="vi" role="tabpanel" aria-labelledby="tab2" aria-hidden="false"
       *ngFor="let category of categories, let i = index" [@fadeAnimation]="isSectionVisible(i)">
       <div class="row" *ngIf="category.fields.type == 'Team'">

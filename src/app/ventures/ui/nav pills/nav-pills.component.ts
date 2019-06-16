@@ -9,7 +9,7 @@ import { NavPillComponent } from './nav pill/nav-pill.component';
 export class NavPillsComponent {
     @Input() pills: string[];
     @Output() pillClicked: EventEmitter<number>;
-    private activeIndex: number;
+    public activeIndex: number;
     isLargeScreen: boolean;
     isOverlayOpen: boolean;
 

@@ -1,0 +1,24 @@
+li.dropup>ul.dropdown-menu {
+    display: block;
+    position: absolute;
+    top: -138px;
+}
+
+ul.footer-list>li>a {
+    cursor: pointer;
+    padding-right: 25px;
+}
+
+ul.dropdown-menu>li {
+    width: 100%;
+    cursor: pointer;
+}
+
+ul.dropdown-menu {
+    bottom: auto !important;
+}
+
+.bot-left:after {
+    width: auto;
+    top: 117px;
+}

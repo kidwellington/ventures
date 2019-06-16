@@ -13,6 +13,7 @@ import { PortfolioComponent } from './ventures/investing/portfolio/portfolio.com
 import { CupidComponent } from './ventures/studio/cupid/cupid.component';
 import { VenturesComponent } from './ventures/ventures.component';
 import { BioComponent } from './ventures/bio/bio.component';
+import { LoginComponent } from './ventures/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'ventures', pathMatch: 'full' },
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'ventures/team',  component: TeamComponent },
   { path: 'ventures/venture-investing/at-a-glance',  component: AtAGlanceComponent },
   { path: 'ventures/venture-investing/portfolio',  component: PortfolioComponent },
-  { path: 'ventures/studio/cupid',  component: CupidComponent }
+  { path: 'ventures/studio/cupid',  component: CupidComponent },
+  { path: 'ventures/login',  component: LoginComponent }
 ];
 
 @NgModule({

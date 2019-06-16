@@ -30,6 +30,9 @@ import { PerspectiveComponent } from './ventures/ui/perspective/perspective.comp
 import { InnovativeComponent } from './ventures/ui/innovative/innovative.component';
 import { CircularComponent } from './ventures/ui/circular/circular.component';
 import { RtToHtmlPipe } from './pipes/rt-to-html.pipe';
+import { LoginComponent } from './ventures/login/login.component';
+import { BrandingComponent } from './ventures/ui/branding/branding.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -58,14 +61,16 @@ import { RtToHtmlPipe } from './pipes/rt-to-html.pipe';
     PerspectiveComponent,
     InnovativeComponent,
     CircularComponent,
-    RtToHtmlPipe
+    RtToHtmlPipe,
+    LoginComponent,
+    BrandingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [ContentfulService],
+  providers: [ContentfulService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { MenuComponent } from './ventures/ui/menu/menu.component';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +6,7 @@ import { MenuComponent } from './ventures/ui/menu/menu.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  @ViewChild('menu') appMenu: MenuComponent;
+
   title = 'ventures';
 
-  /**
-   * Forces the close of the Menu component
-   */
-  public closeMenu(): void {
-    this.appMenu.closeMenu();
-  }
 }

@@ -1,0 +1,9 @@
+<app-menu #menu *ngIf="branding" [header]="branding.fields.header"></app-menu>
+
+<div id="body" (click)="closeMenu()">
+
+  <router-outlet></router-outlet>
+  
+</div>
+
+<app-footer #footer (click)="closeMenu()" *ngIf="branding" [footer]="branding.fields.footer"></app-footer>

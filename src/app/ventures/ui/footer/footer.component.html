@@ -1,17 +1,31 @@
-<div id="footer" class="" *ngIf="footer">
+<div (click)="closeMenu()" id="footer" class="footer-menu">
   <!--cms-edit [entry]="footer"></cms-edit-->
   <div class="container">
     <div class="row">
-    <div class="col-xs-12 col-sm-12 col-xs-offset-0">
-      <hr class="green">
-    </div>
+      <div class="col-xs-12 col-sm-12 col-xs-offset-0">
+        <hr class="green">
+      </div>
       <div class="col-sm-1 col-sm-offset-1 col-xs-offset-0 footer-container-logo">
-        <a class="footer-icon" href="https://online.citibank.com/" target="_blank"><img src="{{footer.fields.logo.fields.file.url}}" alt="{{footer.fields.logo.fields.description}}"></a>
+        <a class="footer-icon" href="https://online.citibank.com/" target="_blank"><img
+            src="{{footer.fields.logo.fields.file.url}}" alt="{{footer.fields.logo.fields.description}}"></a>
       </div>
       <div class="col-sm-9 footer-container-links">
         <ul class="footer-list">
           <li *ngFor="let link of footer.fields.navLinks" class="footer-privacy middle-list">
             <a href="{{link.fields.url}}" target="_blank">{{link.fields.linkText}}</a>
+          </li>
+          <li class="dropup" role="none">
+            <a (click)="toggle2($event)" data-toggle="dropdown" role="menuitem" aria-haspopup="true"
+              aria-expanded="false" tabindex="0" class="_dropdown-toggle m-noLink">
+              {{footer.fields.languages.fields.title}}
+            </a>
+            <ul *ngIf="show2" role="menu" aria-label="Languages"
+              class="dropdown-menu bot-left desktop-submenu mobile-desk-dropdown" aria-hidden="true">
+              <li role="none" *ngFor="let lang of footer.fields.languages.fields.locales" class="dropdown-options">
+                <a (click)="toggle2($event)" id="{{lang.fields.id}}" role="menuitem"
+                  tabindex="-1">{{lang.fields.name}}</a>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>

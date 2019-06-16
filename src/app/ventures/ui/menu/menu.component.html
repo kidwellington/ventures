@@ -1,18 +1,21 @@
 <!-- NAV 2.0 -->
-<nav (click)="closeMenu()" aria-label="Citi Ventures" id="header" class="navbar navbar-default navbar-fixed-top" *ngIf="header">
+<nav (click)="closeMenu()" aria-label="Citi Ventures" id="header" class="navbar navbar-default navbar-fixed-top"
+  *ngIf="header">
   <!--cms-edit [entry]="header"></cms-edit--->
   <div class="container">
     <!-- NAV HEADER-->
     <div class="navbar-header">
-
-      <a class="navbar-brand" routerLink=""><img class="cv-logo" src="{{header.fields.logo.fields.file.url}}" alt="{{header.fields.logo.fields.description}}"></a>
-      <a class="navbar-toggle collapsed sideNav openNav" data-toggle="collapse" aria-expanded="false" aria-controls="menubar1" href="#">
+      <a class="navbar-brand" routerLink=""><img class="cv-logo" src="{{header.fields.logo.fields.file.url}}"
+          alt="{{header.fields.logo.fields.description}}"></a>
+      <a class="navbar-toggle collapsed sideNav openNav" data-toggle="collapse" aria-expanded="false"
+        aria-controls="menubar1" href="#">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="navbar-toggle collapsed sideNav closeNav" data-toggle="collapse" aria-expanded="false" aria-controls="menubar1" href="#">
+      <a class="navbar-toggle collapsed sideNav closeNav" data-toggle="collapse" aria-expanded="false"
+        aria-controls="menubar1" href="#">
         <span class="sr-only">Close navigation</span>
       </a>
     </div>
@@ -23,37 +26,44 @@
       <ul id="menubar1" role="menubar" aria-label="Citi Ventures main navigation" class="nav navbar-nav navbar-right">
         <!-- LI WWD Dropdown -->
         <li class="_dropdown m-wwd" role="none">
-          <a (click)="toggle($event)" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0" class="_dropdown-toggle m-noLink hidden-xs">
-              {{header.fields.subNavigation.fields.name}} 
+          <a (click)="toggle($event)" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0"
+            class="_dropdown-toggle m-noLink hidden-xs">
+            {{header.fields.subNavigation.fields.name}}
           </a>
           <!-- UL WWD -->
-          <ul *ngIf="show" role="menu" aria-label="What We Do" class="dropdown-menu desktop-submenu bot-left mobile-desk-dropdown" aria-hidden="true">
+          <ul *ngIf="show" role="menu" aria-label="What We Do"
+            class="dropdown-menu desktop-submenu bot-left mobile-desk-dropdown" aria-hidden="true">
             <li role="none" *ngFor="let subLink of header.fields.subNavigation.fields.navLinks">
-              <a (click)="toggle($event)" role="menuitem" class="{{subLink.fields.linkText=='CUPID' || subLink.fields.linkText=='At-A-Glance' ? 'withMargin noFocusOutline' : ''}}" routerLink="{{subLink.fields.url}}" tabindex="-1">{{subLink.fields.linkText}}</a>
-            </li>        
+              <a (click)="toggle($event)" role="menuitem"
+                class="{{subLink.fields.linkText=='CUPID' || subLink.fields.linkText=='At-A-Glance' ? 'withMargin noFocusOutline' : ''}}"
+                routerLink="{{subLink.fields.url}}" tabindex="-1">{{subLink.fields.linkText}}</a>
+            </li>
           </ul>
-          <!-- CLOSE UL WWD --> 
+          <!-- CLOSE UL WWD -->
         </li>
         <!-- CLOSE LI WWD Dropdown -->
-
         <li class="menu-i hidden-xs menu-mobile-hide" role="none" *ngFor="let link of header.fields.navLinks">
-          <a *ngIf="!link.fields.externalLink" role="menuitem" aria-haspopup="false" routerLink="{{link.fields.url}}">{{link.fields.linkText}}</a>
-          <a *ngIf="link.fields.externalLink == true && !link.fields.icon" role="menuitem" aria-haspopup="false" href="{{link.fields.url}}" target="_blank">{{link.fields.linkText}}
+          <a *ngIf="!link.fields.externalLink" role="menuitem" aria-haspopup="false"
+            routerLink="{{link.fields.url}}">{{link.fields.linkText}}</a>
+          <a *ngIf="link.fields.externalLink == true && !link.fields.icon" role="menuitem" aria-haspopup="false"
+            href="{{link.fields.url}}" target="_blank">{{link.fields.linkText}}</a>
+          <a *ngIf="link.fields.externalLink == true && link.fields.icon" role="menuitem" aria-haspopup="false"
+            href="{{link.fields.url}}" target="_blank">
+            <img *ngIf="link.fields.icon" class="icon" src="{{link.fields.icon.fields.file.url}}"
+              alt="{{link.fields.icon.fields.title}}" />
           </a>
-          <a *ngIf="link.fields.externalLink == true && link.fields.icon" role="menuitem" aria-haspopup="false" href="{{link.fields.url}}" target="_blank">
-            <img *ngIf="link.fields.icon" class="icon" src="{{link.fields.icon.fields.file.url}}" alt="{{link.fields.icon.fields.title}}" />
-          </a>  
           <div *ngIf="!link.fields.icon" class="gradient-bar hidden-xs"></div>
         </li>
         <!--
-        <li class="menu-i last" role="none">
-          <a role="menuitem" class="sm-twitter" href="https://twitter.com/CitiVentures/" target="_blank" aria-haspopup="false">
-            <svg role="img" aria-label="twitter" width="17px" height="15px" viewBox="0 0 17 15" class="icon twitter"><path d="M14.1151611,2.21334681 C14.7932148,1.77654196 15.3134942,1.08392315 15.5576686,0.258847321 C14.922815,0.664307381 14.2212831,0.957532861 13.4727945,1.11627907 C12.8755063,0.428715875 12.0218348,0 11.0770676,0 C9.26454188,0 7.79573869,1.58240647 7.79573869,3.5338726 C7.79573869,3.81092012 7.82297353,4.08088979 7.87932148,4.33872599 C5.15208077,4.19110212 2.73381464,2.78564206 1.11381112,0.646107179 C0.831132242,1.16986855 0.669601456,1.77654196 0.669601456,2.42366026 C0.669601456,3.64914055 1.24904619,4.73104146 2.12995246,5.36602629 C1.59182955,5.34782609 1.08563714,5.18705763 0.642366614,4.92416582 L0.642366614,4.96764408 C0.642366614,6.68048534 1.77308212,8.10920121 3.27663321,8.43276036 C3.00052826,8.5156724 2.71127546,8.55712841 2.41075307,8.55712841 C2.19944826,8.55712841 1.99283911,8.53589484 1.79374303,8.49443883 C2.21071785,9.89787664 3.42313788,10.9211325 4.86001057,10.9484328 C3.73586899,11.8968655 2.32059635,12.4610718 0.783236485,12.4610718 C0.518401127,12.4610718 0.256383166,12.445905 0,12.4125379 C1.45283794,13.4145602 3.1780243,14 5.03187181,14 C11.0704936,14 14.3706052,8.61476239 14.3706052,3.94438827 C14.3706052,3.79069767 14.3687269,3.6380182 14.362153,3.48736097 C15.0035804,2.98887765 15.5614251,2.36602629 16,1.65722952 C15.4111639,1.93832154 14.7781886,2.12841254 14.1151611,2.21334681 Z"></path></svg>
-          </a>
-        </li-->
+      <li class="menu-i last" role="none">
+        <a role="menuitem" class="sm-twitter" href="https://twitter.com/CitiVentures/" target="_blank" aria-haspopup="false">
+          <svg role="img" aria-label="twitter" width="17px" height="15px" viewBox="0 0 17 15" class="icon twitter"><path d="M14.1151611,2.21334681 C14.7932148,1.77654196 15.3134942,1.08392315 15.5576686,0.258847321 C14.922815,0.664307381 14.2212831,0.957532861 13.4727945,1.11627907 C12.8755063,0.428715875 12.0218348,0 11.0770676,0 C9.26454188,0 7.79573869,1.58240647 7.79573869,3.5338726 C7.79573869,3.81092012 7.82297353,4.08088979 7.87932148,4.33872599 C5.15208077,4.19110212 2.73381464,2.78564206 1.11381112,0.646107179 C0.831132242,1.16986855 0.669601456,1.77654196 0.669601456,2.42366026 C0.669601456,3.64914055 1.24904619,4.73104146 2.12995246,5.36602629 C1.59182955,5.34782609 1.08563714,5.18705763 0.642366614,4.92416582 L0.642366614,4.96764408 C0.642366614,6.68048534 1.77308212,8.10920121 3.27663321,8.43276036 C3.00052826,8.5156724 2.71127546,8.55712841 2.41075307,8.55712841 C2.19944826,8.55712841 1.99283911,8.53589484 1.79374303,8.49443883 C2.21071785,9.89787664 3.42313788,10.9211325 4.86001057,10.9484328 C3.73586899,11.8968655 2.32059635,12.4610718 0.783236485,12.4610718 C0.518401127,12.4610718 0.256383166,12.445905 0,12.4125379 C1.45283794,13.4145602 3.1780243,14 5.03187181,14 C11.0704936,14 14.3706052,8.61476239 14.3706052,3.94438827 C14.3706052,3.79069767 14.3687269,3.6380182 14.362153,3.48736097 C15.0035804,2.98887765 15.5614251,2.36602629 16,1.65722952 C15.4111639,1.93832154 14.7781886,2.12841254 14.1151611,2.21334681 Z"></path></svg>
+        </a>
+      </li-->
       </ul>
       <!-- CLOSE UL MenuBar1 -->
     </div>
     <!-- CLOSE SIDENAV -->
-  </div><!-- Close container -->
+  </div>
+  <!-- Close container -->
 </nav>
