@@ -30,3 +30,13 @@
 		margin-left: 8.33333333%;
 	}
 }
+
+@media (max-width: 767px) {
+	.vCarousel.img-gradient.img-container {
+		max-width: 380px;
+		margin: 0 auto 30px;
+		display: block;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
