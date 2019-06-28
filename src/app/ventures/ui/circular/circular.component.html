@@ -4,7 +4,7 @@
 	[class.col-xs-12]="parentEntry.length <= 3" [class.col-xs-6]="parentEntry.length >= 4"
 	[class.col-md-2]="parentEntry.length >= 4" [class.col-sm-2]="parentEntry.length >= 4"
 	[class.offset-small]="parentEntry.length >= 4" class="col-center">
-	<div class="img-gradient circular img-container no-logo nolink">
+	<div class=" vCarousel img-gradient circular img-container no-logo nolink">
 		<img src="{{entry.fields.backgroundImg.fields.file.url}}" class="spotlight-bg" alt="">
 		<div class="vContent in-middle">
 			<p *ngIf="entry.fields.header" class="eyebrow asHeader lh30">{{entry.fields.header}}</p>

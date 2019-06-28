@@ -6,19 +6,19 @@
 	vertical-align: bottom;
 }
 .col-center.inline {
-	float: none;
+	// float: none;
 }
 
 @media (min-width: 768px) {
 	.col-center.inline:nth-of-type(3n+1) {
-		margin-left: 6%;
+		margin-left: 4%;
 	}
 	.col-center.inline:nth-of-type(3n+0) {
-		margin-right: 6%;
+		margin-right: 4%;
 	}
 
 	.col-center.inline:last-of-type {
-		margin-right: 6%;
+		margin-right: 4%;
 	}
 	.col-center.offset-big:nth-of-type(even) {
 		padding-top: 110px;

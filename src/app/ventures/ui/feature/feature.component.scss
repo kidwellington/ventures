@@ -1,10 +1,13 @@
 @media (min-width: 768px) {
   .adjusted-3-col .col-sm-3 {
-    width: 25%;
+    width: 30%;
   }
-  .ventures-row > div > div:first-of-type {
-    margin-left: 8.33333333%;
+  .adjusted-3-col .col-sm-3.spacing {
+    margin-right: 3.2%;
   }
+  // .ventures-row > div > div:first-of-type {
+  //   margin-left: 8.33333333%;
+  // }
 }
 
 .ventures-row { 
@@ -14,9 +17,9 @@
     margin-bottom: 0px;
   }
 
-  .spacing:last-of-type {
-    margin-right: 0;
-  }
+  // .spacing:last-of-type {
+  //   margin-right: 0;
+  // }
 
   h4 {
     background: linear-gradient(to left,#0556A5,#057F52);
@@ -24,6 +27,10 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .nudge {
+    padding-left: 0;
   }
 
   // a {
