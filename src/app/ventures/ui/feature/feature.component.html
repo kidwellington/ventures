@@ -42,7 +42,7 @@
         <div *ngFor="let item of row.fields.itemData">
           <div *ngIf="item.sys.contentType.sys.id === 'featureItem'">
             <div [class.col-md-5]="row.fields.itemData.length == 2" [class.col-sm-5]="row.fields.itemData.length == 2"
-              [class.col-sm-3]="row.fields.itemData.length == 3" class="col-xs-12 col-sm-10 spacing">
+              [class.col-sm-3]="row.fields.itemData.length == 3" class="col-xs-12 col-sm-10 spacing col-xs-offset-0 col-sm-offset-1">
               <h4>{{item.fields.header}}</h4>
               <div [innerHTML]="item.fields.description | rtToHtml"></div>
               <p *ngIf="item.fields.linkUrl"><a href="{{item.fields.linkUrl}}" class="cta chevron noGrow dark lm"
