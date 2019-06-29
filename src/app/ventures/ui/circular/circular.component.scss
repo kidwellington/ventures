@@ -5,9 +5,9 @@
 	display: inline-block;
 	vertical-align: bottom;
 }
-.col-center.inline {
-	// float: none;
-}
+// .col-center.inline {
+// 	float: none;
+// }
 
 @media (min-width: 768px) {
 	.col-center.inline:nth-of-type(3n+1) {

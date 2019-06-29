@@ -17,7 +17,7 @@ export class StudioComponent implements OnInit {
     this.contentfulService.cdaClient.getEntries({
       content_type: 'page',
       'sys.id': '3F4MWF0dHTETyStK0Iewc1',
-      include: 3
+      include: 4
     }).then(page => {
       this.page = page.items[0];
       console.log(this.page);

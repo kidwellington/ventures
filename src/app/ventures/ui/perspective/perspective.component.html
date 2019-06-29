@@ -1,4 +1,4 @@
-<div [class.col-md-10]="parentEntry.length == 1" [class.col-md-6]="parentEntry.length == 2"
+<div [class.col-md-12]="parentEntry.length == 1" [class.col-md-6]="parentEntry.length == 2"
   class="col-sm-10 perspective-container">
   <div [class.double]="parentEntry.length == 1" [class.no-img]="!entry.fields.backgroundImg"
     class="img-gradient img-container tt-leaf">
@@ -16,7 +16,7 @@
         {{entry.fields.author}}
       </p>
       <p class="article-author">{{entry.fields.publishDate | date:'MMMM dd, yyyy'}}</p>
-      <p class="article-copy hidden-sm hidden-xs" *ngIf="entry.fields.previewText && row.fields.itemData.length == 1">
+      <p class="article-copy hidden-sm hidden-xs" *ngIf="entry.fields.previewText && parentEntry.length == 1">
         {{entry.fields.previewText}}</p>
     </div>
   </div>

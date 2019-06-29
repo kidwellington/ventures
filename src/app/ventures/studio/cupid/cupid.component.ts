@@ -17,7 +17,7 @@ export class CupidComponent implements OnInit {
     this.contentfulService.cdaClient.getEntries({
       content_type: 'page',
       'sys.id': '7mKBMuFX7m8wQ6Eb0unnT4',
-      include: 3
+      include: 4
     }).then(page => {
       this.page = page.items[0];
       console.log(this.page);
