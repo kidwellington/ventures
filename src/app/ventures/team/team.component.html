@@ -23,7 +23,7 @@
         <div class="col-xs-6 col-sm-2 team-p col-center"
           *ngFor="let bio of biosForCategories[category.sys.id]; let i = index">
           <cms-edit [entry]="bio"></cms-edit>
-          <a [routerLink]="['/ventures/bio', bio.fields.slug]" target="" class="profile-link pl-overlay">
+          <a [routerLink]="['/ventures/bio', bio.fields.slug]" class="profile-link pl-overlay">
             <img *ngIf="bio.fields.teamLead == true" class="img__leads" src="/assets/images/team/ellipsegradient.png"
               alt="">
             <div class="img__overlay" aria-hidden="true"></div>
