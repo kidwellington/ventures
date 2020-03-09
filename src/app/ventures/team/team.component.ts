@@ -36,7 +36,7 @@ export class TeamComponent implements OnInit {
   public pills: string[];
   public pillSections: boolean[];
 
-  @ViewChild(NavPillsComponent, { static: false }) navPills: NavPillsComponent;
+  @ViewChild(NavPillsComponent) navPills: NavPillsComponent;
 
   constructor(private contentfulService: ContentfulService) {
     this.isLoaded = false;

@@ -12,8 +12,8 @@ import { FooterComponent } from '../footer/footer.component';
 })
 
 export class BrandingComponent implements OnInit {
-  @ViewChild('menu', { static: false }) appMenu: MenuComponent;
-  @ViewChild('footer', { static: false }) appfooter: FooterComponent;
+  @ViewChild('menu') appMenu: MenuComponent;
+  @ViewChild('footer') appfooter: FooterComponent;
 
   private cookieValue: any;
   public branding: Entry<any>;
